@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Javon Davis</string>
+    <string name="profile_picture_content_description">Profile Picture</string>
+    <string name="header_skills">Skills</string>
+    <string name="header_work_experience">Work Experience</string>
+    <string name="javon_email">javonldavis14@gmail.com</string>
+    <string name="javon_website">ja-von.github.io</string>
+    <string name="javon_mission_statement">Software Developer with over 4+ years experience in Android Development, API Development and Java and Python programming in a broad range of industries including agriculture, sales management and mobile gaming.</string>
+    <string name="email_javon">Email Javon</string>
+    <string name="visit_my_website">Visit my website</string>
+</resources>
