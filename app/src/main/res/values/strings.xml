@@ -9,6 +9,11 @@
     <string name="email_javon">Email Javon</string>
     <string name="visit_my_website">Visit my website</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="content_description_profile_picture">Profile picture</string>
+    <string name="placeholder_name">Firstname Surname</string>
+    <string name="action_settings">Settings</string>
+    <string name="placeholder_location">City, Country</string>
+    <string name="text_six_second">6s Overview</string>
+    <string name="text_full_portfolio">Full Portfolio</string>
+    <string name="text_make_app">Make your own Résumé app</string>
 </resources>
