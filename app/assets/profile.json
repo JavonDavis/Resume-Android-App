@@ -121,7 +121,7 @@
     },
     {
       "title": "AndroidViewController",
-      "url": "",
+      "url": "http://android-arsenal.com/details/1/3208",
       "date":"February 2016",
       "description": "Android Library to animate the transitions over a number of views in a list",
       "source": "https://github.com/JA-VON/Android-View-Controller"
@@ -142,17 +142,17 @@
     },
     {
       "title": "Lab Assistant",
-      "url": "https://github.com/JA-VON/Lab-Assistant",
+      "url": "",
       "date":"December 2015",
       "description": "Android App to scan students’ ID cards and save their grades to a Moodle instance",
-      "source": ""
+      "source": "https://github.com/JA-VON/Lab-Assistant"
     },
     {
-      "title": "UWI Research Days 2016",
-      "url": "https://github.com/JA-VON/UWI-Research-Days-Android",
+      "title": "UWI Research Days",
+      "url": "https://play.google.com/store/apps/details?id=com.uwics.uwidiscover&hl=en",
       "date":"February 2016",
       "description": "Companion app for annual 3 day event held at the university",
-      "source": ""
+      "source": "https://github.com/JA-VON/UWI-Research-Days-Android"
     },
     {
       "title": "Mobile OurVLE",

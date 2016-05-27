@@ -8,4 +8,7 @@
     <string name="javon_mission_statement">Software Developer with over 4+ years experience in Android Development, API Development and Java and Python programming in a broad range of industries including agriculture, sales management and mobile gaming.</string>
     <string name="email_javon">Email Javon</string>
     <string name="visit_my_website">Visit my website</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
