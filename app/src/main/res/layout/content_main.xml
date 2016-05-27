@@ -25,6 +25,7 @@
             android:padding="@dimen/picture_padding"
             android:src="@drawable/default_picture"
             android:layout_gravity="center_horizontal"
+            android:onClick="onPictureClick"
             android:contentDescription="@string/content_description_profile_picture"
             android:layout_centerHorizontal="true"
             android:layout_above="@+id/nameView" />
@@ -68,6 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
+                android:onClick="onSixSecondClick"
                 android:text="@string/text_six_second"
                 android:id="@+id/six_second_button" />
 
@@ -76,6 +78,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/text_full_portfolio"
                 android:textAllCaps="false"
+                android:onClick="onFullPortfolioClick"
                 android:id="@+id/profile_button" />
         </LinearLayout>
 
@@ -84,6 +87,7 @@
             android:layout_height="wrap_content"
             android:text="@string/text_make_app"
             android:id="@+id/make_your_own_view"
+            android:onClick="onMakeYourOwnClick"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
     </RelativeLayout>

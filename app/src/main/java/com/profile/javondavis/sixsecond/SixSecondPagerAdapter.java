@@ -5,6 +5,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.profile.javondavis.Constants;
+import com.profile.javondavis.sixsecond.ui.EducationFragment;
+import com.profile.javondavis.sixsecond.ui.OrganizationsFragment;
+import com.profile.javondavis.sixsecond.ui.ProjectsFragment;
+import com.profile.javondavis.sixsecond.ui.TopSkillsFragment;
 
 /**
  * @author Javon Davis
@@ -21,15 +25,15 @@ public class SixSecondPagerAdapter extends FragmentStatePagerAdapter {
         switch (position)
         {
             case Constants.PAGE_EDUCATION:
-                break;
+                return EducationFragment.newInstance();
             case Constants.PAGE_SKILLS:
-                break;
+                return TopSkillsFragment.newInstance();
             case Constants.PAGE_ORGANIZATIONS:
-                break;
+                return OrganizationsFragment.newInstance();
             case Constants.PAGE_PROJECTS:
-                break;
+                return ProjectsFragment.newInstance();
         }
-        return null;
+        return EducationFragment.newInstance();
     }
 
     @Override
