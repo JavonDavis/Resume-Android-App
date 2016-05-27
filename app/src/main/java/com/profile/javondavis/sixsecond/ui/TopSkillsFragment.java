@@ -33,7 +33,6 @@ public class TopSkillsFragment extends Fragment {
      *
      * @return A new instance of fragment TopSkillsFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static TopSkillsFragment newInstance() {
         TopSkillsFragment fragment = new TopSkillsFragment();
         Bundle args = new Bundle();

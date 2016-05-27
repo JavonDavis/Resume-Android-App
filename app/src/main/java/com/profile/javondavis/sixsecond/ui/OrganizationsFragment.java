@@ -33,7 +33,6 @@ public class OrganizationsFragment extends Fragment {
      *
      * @return A new instance of fragment OrganizationsFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static OrganizationsFragment newInstance() {
         OrganizationsFragment fragment = new OrganizationsFragment();
         Bundle args = new Bundle();
