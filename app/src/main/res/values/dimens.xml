@@ -6,4 +6,5 @@
     <dimen name="picture_width">200dp</dimen>
     <dimen name="text_size_name">24sp</dimen>
     <dimen name="picture_padding">16dp</dimen>
+    <dimen name="text_size_date">18sp</dimen>
 </resources>
