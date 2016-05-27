@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -9,8 +9,43 @@
     tools:context="com.profile.javondavis.sixsecond.ui.TopSkillsFragment">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Skills" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/text_skills_header"
+        android:textAllCaps="true"
+        android:id="@+id/topSkillsHeaderView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/top_skills_header_margin" />
 
-</FrameLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/text_skill_1"
+        android:id="@+id/skill1TextView"
+        android:layout_below="@+id/topSkillsHeaderView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/skill_1_margin" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/text_skill_2"
+        android:id="@+id/skill2TextView"
+        android:layout_below="@+id/skill1TextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/skill_margin" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/text_skill_3"
+        android:id="@+id/skill3TextView"
+        android:layout_below="@+id/skill2TextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/skill_margin" />
+</RelativeLayout>

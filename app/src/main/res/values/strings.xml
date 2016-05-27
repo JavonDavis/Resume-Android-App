@@ -25,4 +25,8 @@
     <string name="text_major_1">Major: major 1</string>
     <string name="text_minor_1">Minor: minor 1</string>
     <string name="text_coursework">Coursework</string>
+    <string name="text_skills_header">Firstname\'s top skills</string>
+    <string name="text_skill_1">Skill 1</string>
+    <string name="text_skill_2">Skill 2</string>
+    <string name="text_skill_3">Skill 3</string>
 </resources>

@@ -7,4 +7,7 @@
     <dimen name="text_size_name">24sp</dimen>
     <dimen name="picture_padding">16dp</dimen>
     <dimen name="text_size_date">18sp</dimen>
+    <dimen name="top_skills_header_margin">80dp</dimen>
+    <dimen name="skill_1_margin">60dp</dimen>
+    <dimen name="skill_margin">45dp</dimen>
 </resources>
