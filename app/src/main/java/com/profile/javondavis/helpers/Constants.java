@@ -1,4 +1,4 @@
-package com.profile.javondavis;
+package com.profile.javondavis.helpers;
 
 /**
  * @author Javon Davis

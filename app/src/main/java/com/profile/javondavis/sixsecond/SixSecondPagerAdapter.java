@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.profile.javondavis.Constants;
+import com.profile.javondavis.helpers.Constants;
 import com.profile.javondavis.sixsecond.ui.EducationFragment;
 import com.profile.javondavis.sixsecond.ui.OrganizationsFragment;
 import com.profile.javondavis.sixsecond.ui.ProjectsFragment;
