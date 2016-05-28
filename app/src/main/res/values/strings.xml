@@ -29,4 +29,7 @@
     <string name="text_skill_1">Skill 1</string>
     <string name="text_skill_2">Skill 2</string>
     <string name="text_skill_3">Skill 3</string>
+    <string name="text_organization_header">Firstname worked at</string>
+    <string name="text_organization_duration">From start to end</string>
+    <string name="text_organization_title">Organization</string>
 </resources>
