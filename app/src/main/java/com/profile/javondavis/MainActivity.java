@@ -27,6 +27,7 @@ public class MainActivity extends BaseActivity {
     @Bind(R.id.locationTextView) TextView locationView;
     @Bind(R.id.picture) ImageView pictureImageView;
     @Bind(R.id.nameTextView) TextView nameView;
+    private Profile profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,19 +45,15 @@ public class MainActivity extends BaseActivity {
         mRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String name = (String) dataSnapshot.child("name").getValue();
-                String imageUrl = (String) dataSnapshot.child("imageurl").getValue();
-                String location = (String) dataSnapshot.child("location").getValue();
-
-                Profile profile = dataSnapshot.getValue(Profile.class);
+                profile = dataSnapshot.getValue(Profile.class);
 
                 Glide
                         .with(MainActivity.this)
-                        .load(imageUrl.trim())
+                        .load(profile.getImageurl())
                         .into(pictureImageView);
 
-                nameView.setText(name.trim());
-                locationView.setText(location.trim());
+                nameView.setText(profile.getName());
+                locationView.setText(profile.getLocation());
             }
 
             @Override
