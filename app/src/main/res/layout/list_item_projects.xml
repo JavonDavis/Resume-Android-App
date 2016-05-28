@@ -5,14 +5,14 @@
 
     <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/card_organization"
+        android:id="@+id/card_projects"
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         card_view:cardCornerRadius="4dp">
 
         <LinearLayout
-            android:id="@+id/organizationContainer"
+            android:id="@+id/projectsContainer"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,44 +22,60 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/text_organization_title"
-                android:id="@+id/organizationTitleView"
+                android:text="@string/text_project_title"
+                android:id="@+id/projectTitleView"
                 android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/text_organization_duration"
-                android:id="@+id/organizationDurationView"
+                android:text="@string/text_project_date"
+                android:id="@+id/projectDateView"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_description_placeholder"
+                android:id="@+id/projectDescription"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/relevant_technologies"
+                android:id="@+id/relevantTechnologiesView"
                 android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/text_placeholder_duty"
-                android:id="@+id/organizationDuty1"
+                android:text="@string/relevant_technology"
+                android:id="@+id/relevantTechnologyView1"
                 android:padding="5dp"
-                android:textSize="16sp" />
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/text_placeholder_duty"
-                android:id="@+id/organizationDuty2"
-                android:textSize="16sp"
-                android:padding="5dp" />
+                android:text="@string/relevant_technology"
+                android:id="@+id/relevantTechnologyView2"
+                android:padding="5dp"
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/text_placeholder_duty"
-                android:id="@+id/organizationDuty3"
-                android:textSize="16sp"
-                android:padding="5dp"/>
+                android:text="@string/relevant_technology"
+                android:id="@+id/relevantTechnologyView3"
+                android:padding="5dp"
+                android:layout_gravity="center_horizontal" />
+
 
         </LinearLayout>
 

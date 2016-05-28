@@ -32,4 +32,11 @@
     <string name="text_organization_header">Firstname worked at</string>
     <string name="text_organization_duration">From start to end</string>
     <string name="text_organization_title">Organization</string>
+    <string name="text_project_header">Firstname worked on</string>
+    <string name="text_project_title">Project Title</string>
+    <string name="text_project_date">in month year</string>
+    <string name="text_description_placeholder">Project description</string>
+    <string name="relevant_technologies">Relevant Technologies</string>
+    <string name="relevant_technology">Relevant Technology</string>
+    <string name="text_placeholder_duty">In charge of a specific Duty at the Organization</string>
 </resources>

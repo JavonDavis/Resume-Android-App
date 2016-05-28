@@ -17,7 +17,7 @@
         android:text="@string/text_organization_header" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/course_list"
+        android:id="@+id/organizationList"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
