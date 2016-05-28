@@ -1,7 +1,6 @@
 package com.profile.javondavis.sixsecond.ui;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.profile.javondavis.R;
+import com.profile.javondavis.models.WorkExperience;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,8 +34,9 @@ public class OrganizationsFragment extends Fragment {
      * this fragment using the provided parameters.
      *
      * @return A new instance of fragment OrganizationsFragment.
+     * @param workexperiences
      */
-    public static OrganizationsFragment newInstance() {
+    public static OrganizationsFragment newInstance(List<WorkExperience> workexperiences) {
         OrganizationsFragment fragment = new OrganizationsFragment();
         Bundle args = new Bundle();
 

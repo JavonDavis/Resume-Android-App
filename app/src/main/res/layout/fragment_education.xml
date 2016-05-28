@@ -11,15 +11,17 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="vertical"
-        android:gravity="center"
+        android:layout_weight="1"
+        android:gravity="bottom"
         android:padding="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/text_education_1"
+            android:layout_gravity="center"
             android:id="@+id/educationTextView1" />
 
         <TextView
@@ -27,11 +29,13 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/text_education_2"
+            android:layout_gravity="center"
             android:id="@+id/educationTextView2" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@string/text_from" />
 
         <TextView
@@ -39,11 +43,13 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/text_university_placeholder"
+            android:layout_gravity="center"
             android:id="@+id/universityNameView" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@string/text_and" />
 
         <TextView
@@ -52,35 +58,43 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/text_graduate_date"
             android:textSize="@dimen/text_size_date"
+            android:layout_gravity="center"
             android:id="@+id/dateView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_major_1"
+            android:id="@+id/major1"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_minor_1"
+            android:id="@+id/minor1"
+            android:padding="10dp"/>
 
     </LinearLayout>
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_major_1"
-        android:id="@+id/major1"
-        android:padding="10dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_minor_1"
-        android:id="@+id/minor1"
-        android:padding="10dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_coursework"
-        android:layout_gravity="center"
-        android:id="@+id/courseWorkView" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/courseList"
-        android:scrollbars="vertical"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_coursework"
+            android:layout_gravity="center"
+            android:id="@+id/courseWorkView" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/courseList"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+
 </LinearLayout>

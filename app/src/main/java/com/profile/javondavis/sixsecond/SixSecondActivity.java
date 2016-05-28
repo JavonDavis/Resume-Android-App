@@ -5,6 +5,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.profile.javondavis.R;
+import com.profile.javondavis.helpers.Constants;
+import com.profile.javondavis.models.Profile;
 import com.profile.javondavis.sixsecond.ui.EducationFragment;
 import com.profile.javondavis.sixsecond.ui.OrganizationsFragment;
 import com.profile.javondavis.sixsecond.ui.ProjectsFragment;
@@ -29,7 +31,9 @@ public class SixSecondActivity extends AppCompatActivity implements EducationFra
         setContentView(R.layout.activity_six_second);
         ButterKnife.bind(this);
 
-        pagerAdapter = new SixSecondPagerAdapter(getSupportFragmentManager());
+        Profile profile = getIntent().getParcelableExtra(Constants.TAG_PROFILE);
+
+        pagerAdapter = new SixSecondPagerAdapter(getSupportFragmentManager(), profile);
         mPager.setAdapter(pagerAdapter);
     }
 }

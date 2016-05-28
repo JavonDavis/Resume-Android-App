@@ -1,7 +1,6 @@
 package com.profile.javondavis.sixsecond.ui;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.profile.javondavis.R;
+import com.profile.javondavis.models.Skills;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,8 +32,9 @@ public class TopSkillsFragment extends Fragment {
      * this fragment using the provided parameters.
      *
      * @return A new instance of fragment TopSkillsFragment.
+     * @param skills
      */
-    public static TopSkillsFragment newInstance() {
+    public static TopSkillsFragment newInstance(Skills skills) {
         TopSkillsFragment fragment = new TopSkillsFragment();
         Bundle args = new Bundle();
 

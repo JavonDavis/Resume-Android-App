@@ -83,8 +83,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAllCaps="false"
-                    android:onClick="onSixSecondClick"
+                    android:onClick="onSixSecondButtonClick"
                     android:text="@string/text_six_second"
+                    android:enabled="false"
                     android:id="@+id/six_second_button" />
 
                 <Button
@@ -92,8 +93,9 @@
                     android:layout_height="wrap_content"
                     android:text="@string/text_full_portfolio"
                     android:textAllCaps="false"
-                    android:onClick="onFullPortfolioClick"
-                    android:id="@+id/profile_button" />
+                    android:enabled="false"
+                    android:onClick="onFullPortfolioButtonClick"
+                    android:id="@+id/full_portfolio_button" />
             </LinearLayout>
 
             <TextView

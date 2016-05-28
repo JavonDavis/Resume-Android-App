@@ -3,8 +3,8 @@ package com.profile.javondavis;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +14,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 import com.profile.javondavis.helpers.BaseActivity;
+import com.profile.javondavis.helpers.Constants;
 import com.profile.javondavis.models.Profile;
 import com.profile.javondavis.sixsecond.SixSecondActivity;
 
@@ -27,6 +28,8 @@ public class MainActivity extends BaseActivity {
     @Bind(R.id.locationTextView) TextView locationView;
     @Bind(R.id.picture) ImageView pictureImageView;
     @Bind(R.id.nameTextView) TextView nameView;
+    @Bind(R.id.six_second_button) Button sixSecondButton;
+    @Bind(R.id.full_portfolio_button) Button fullPortfolioButton;
     private Profile profile;
 
     @Override
@@ -54,6 +57,9 @@ public class MainActivity extends BaseActivity {
 
                 nameView.setText(profile.getName());
                 locationView.setText(profile.getLocation());
+
+                sixSecondButton.setEnabled(true);
+                fullPortfolioButton.setEnabled(true);
             }
 
             @Override
@@ -63,12 +69,13 @@ public class MainActivity extends BaseActivity {
         });
     }
 
-    public void onSixSecondClick(View view) {
+    public void onSixSecondButtonClick(View view) {
         Intent intent = new Intent(this, SixSecondActivity.class);
+        intent.putExtra(Constants.TAG_PROFILE, profile);
         startActivity(intent);
     }
 
-    public void onFullPortfolioClick(View view) {
+    public void onFullPortfolioButtonClick(View view) {
         Intent intent = new Intent(this, FullPortfolioActivity.class);
         startActivity(intent);
     }

@@ -1,14 +1,18 @@
 package com.profile.javondavis.sixsecond.ui;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.profile.javondavis.R;
+import com.profile.javondavis.helpers.Constants;
+import com.profile.javondavis.models.Education;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,6 +26,7 @@ public class EducationFragment extends Fragment {
 
 
     private OnFragmentInteractionListener mListener;
+    private ArrayList<Education> mEducation;
 
     public EducationFragment() {
         // Required empty public constructor
@@ -32,12 +37,13 @@ public class EducationFragment extends Fragment {
      * this fragment using the provided parameters.
      *
      * @return A new instance of fragment EducationFragment.
+     * @param education - Education object
      */
-    public static EducationFragment newInstance() {
+    public static EducationFragment newInstance(Education education) {
         EducationFragment fragment = new EducationFragment();
         Bundle args = new Bundle();
 
-        //add any arguments here
+        args.putParcelable(Constants.TAG_EDUCATION, education);
         fragment.setArguments(args);
         return fragment;
     }
@@ -46,6 +52,7 @@ public class EducationFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
+            mEducation = getArguments().getParcelable(Constants.TAG_EDUCATION);
         }
     }
 

@@ -39,4 +39,6 @@
     <string name="relevant_technologies">Relevant Technologies</string>
     <string name="relevant_technology">Relevant Technology</string>
     <string name="text_placeholder_duty">In charge of a specific Duty at the Organization</string>
+    <string name="text_skills_header_2">Firstname is also familiar with</string>
+    <string name="text_skill_4">Skill 4</string>
 </resources>

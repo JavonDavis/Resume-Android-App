@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.profile.javondavis.helpers.Constants;
+import com.profile.javondavis.models.Profile;
 import com.profile.javondavis.sixsecond.ui.EducationFragment;
 import com.profile.javondavis.sixsecond.ui.OrganizationsFragment;
 import com.profile.javondavis.sixsecond.ui.ProjectsFragment;
@@ -16,8 +17,10 @@ import com.profile.javondavis.sixsecond.ui.TopSkillsFragment;
  */
 public class SixSecondPagerAdapter extends FragmentStatePagerAdapter {
 
-    public SixSecondPagerAdapter(FragmentManager fm) {
+    private Profile profile;
+    public SixSecondPagerAdapter(FragmentManager fm, Profile profile) {
         super(fm);
+        this.profile = profile;
     }
 
     @Override
@@ -25,15 +28,15 @@ public class SixSecondPagerAdapter extends FragmentStatePagerAdapter {
         switch (position)
         {
             case Constants.PAGE_EDUCATION:
-                return EducationFragment.newInstance();
+                return EducationFragment.newInstance(profile.getEducations().get(0));
             case Constants.PAGE_SKILLS:
-                return TopSkillsFragment.newInstance();
+                return TopSkillsFragment.newInstance(profile.getSkills());
             case Constants.PAGE_ORGANIZATIONS:
-                return OrganizationsFragment.newInstance();
+                return OrganizationsFragment.newInstance(profile.getWorkexperiences());
             case Constants.PAGE_PROJECTS:
-                return ProjectsFragment.newInstance();
+                return ProjectsFragment.newInstance(profile.getProjects());
         }
-        return EducationFragment.newInstance();
+        return EducationFragment.newInstance(profile.getEducations().get(0));
     }
 
     @Override

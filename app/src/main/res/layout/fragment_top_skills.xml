@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -6,46 +6,100 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.profile.javondavis.sixsecond.ui.TopSkillsFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/text_skills_header"
-        android:textAllCaps="true"
-        android:id="@+id/topSkillsHeaderView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/top_skills_header_margin" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/text_skill_1"
-        android:id="@+id/skill1TextView"
-        android:layout_below="@+id/topSkillsHeaderView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/skill_1_margin" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/text_skills_header"
+            android:textAllCaps="true"
+            android:layout_gravity="center"
+            android:id="@+id/topSkillsHeaderView"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/text_skill_2"
-        android:id="@+id/skill2TextView"
-        android:layout_below="@+id/skill1TextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/skill_margin" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/text_skill_1"
+            android:layout_margin="15dp"
+            android:id="@+id/topSkill1TextView"
+            android:layout_gravity="center_horizontal" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/text_skill_3"
-        android:id="@+id/skill3TextView"
-        android:layout_below="@+id/skill2TextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/skill_margin" />
-</RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/text_skill_2"
+            android:layout_margin="15dp"
+            android:id="@+id/topSkill2TextView"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/text_skill_3"
+            android:layout_margin="15dp"
+            android:id="@+id/topSkill3TextView"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/text_skill_4"
+            android:layout_margin="15dp"
+            android:id="@+id/topSkill4TextView"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/text_skills_header_2"
+            android:layout_gravity="center"
+            android:id="@+id/topSkillsHeaderView2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/text_skill_1"
+            android:layout_margin="15dp"
+            android:id="@+id/familiarSkill1TextView"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/text_skill_2"
+            android:layout_margin="15dp"
+            android:id="@+id/familiarSkill2TextView"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/text_skill_3"
+            android:layout_margin="15dp"
+            android:id="@+id/familiarSkill3TextView"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+</LinearLayout>

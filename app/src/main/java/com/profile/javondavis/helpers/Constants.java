@@ -12,4 +12,9 @@ public final class Constants {
     public static final int PAGE_SKILLS = 1;
     public static final int PAGE_ORGANIZATIONS = 2;
     public static final int PAGE_PROJECTS = 3;
+
+    public static final String TAG_PROFILE = "Profile";
+    public static final String TAG_EDUCATION = "Profile";
+    public static final String TAG_SKILLS = "Profile";
+    public static final String TAG_PROJECTS = "Profile";
 }
