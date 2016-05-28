@@ -1,5 +1,8 @@
 package com.profile.javondavis.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +10,7 @@ import java.util.List;
  * @author Javon Davis
  *         Created by Javon Davis on 28/05/16.
  */
-public class Education {
+public class Education implements Parcelable {
 
     public ArrayList<String> courses;
 
@@ -87,4 +90,55 @@ public class Education {
     public void setStudy(String study) {
         this.study = study;
     }
+
+    protected Education(Parcel in) {
+        if (in.readByte() == 0x01) {
+            courses = new ArrayList<String>();
+            in.readList(courses, String.class.getClassLoader());
+        } else {
+            courses = null;
+        }
+        degree = in.readString();
+        minor = in.readString();
+        major = in.readString();
+        end = in.readString();
+        name = in.readString();
+        start = in.readString();
+        study = in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        if (courses == null) {
+            dest.writeByte((byte) (0x00));
+        } else {
+            dest.writeByte((byte) (0x01));
+            dest.writeList(courses);
+        }
+        dest.writeString(degree);
+        dest.writeString(minor);
+        dest.writeString(major);
+        dest.writeString(end);
+        dest.writeString(name);
+        dest.writeString(start);
+        dest.writeString(study);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<Education> CREATOR = new Parcelable.Creator<Education>() {
+        @Override
+        public Education createFromParcel(Parcel in) {
+            return new Education(in);
+        }
+
+        @Override
+        public Education[] newArray(int size) {
+            return new Education[size];
+        }
+    };
 }

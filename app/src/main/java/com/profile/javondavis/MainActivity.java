@@ -50,8 +50,6 @@ public class MainActivity extends BaseActivity {
 
                 Profile profile = dataSnapshot.getValue(Profile.class);
 
-                Log.d(LOG_TAG,profile.getName());
-
                 Glide
                         .with(MainActivity.this)
                         .load(imageUrl.trim())

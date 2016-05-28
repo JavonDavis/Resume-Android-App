@@ -1,12 +1,16 @@
 package com.profile.javondavis.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author Javon Davis
  *         Created by Javon Davis on 28/05/16.
  */
-public class Profile {
+public class Profile implements Parcelable {
 
     public String name;
     public String firstname;
@@ -133,4 +137,95 @@ public class Profile {
     public void setLinks(Links links) {
         this.links = links;
     }
+
+    protected Profile(Parcel in) {
+        name = in.readString();
+        firstname = in.readString();
+        surname = in.readString();
+        title = in.readString();
+        summary = in.readString();
+        imageurl = in.readString();
+        location = in.readString();
+        if (in.readByte() == 0x01) {
+            awards = new ArrayList<Award>();
+            in.readList(awards, Award.class.getClassLoader());
+        } else {
+            awards = null;
+        }
+        if (in.readByte() == 0x01) {
+            educations = new ArrayList<Education>();
+            in.readList(educations, Education.class.getClassLoader());
+        } else {
+            educations = null;
+        }
+        if (in.readByte() == 0x01) {
+            workexperiences = new ArrayList<WorkExperience>();
+            in.readList(workexperiences, WorkExperience.class.getClassLoader());
+        } else {
+            workexperiences = null;
+        }
+        if (in.readByte() == 0x01) {
+            projects = new ArrayList<Project>();
+            in.readList(projects, Project.class.getClassLoader());
+        } else {
+            projects = null;
+        }
+        skills = (Skills) in.readValue(Skills.class.getClassLoader());
+        links = (Links) in.readValue(Links.class.getClassLoader());
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeString(firstname);
+        dest.writeString(surname);
+        dest.writeString(title);
+        dest.writeString(summary);
+        dest.writeString(imageurl);
+        dest.writeString(location);
+        if (awards == null) {
+            dest.writeByte((byte) (0x00));
+        } else {
+            dest.writeByte((byte) (0x01));
+            dest.writeList(awards);
+        }
+        if (educations == null) {
+            dest.writeByte((byte) (0x00));
+        } else {
+            dest.writeByte((byte) (0x01));
+            dest.writeList(educations);
+        }
+        if (workexperiences == null) {
+            dest.writeByte((byte) (0x00));
+        } else {
+            dest.writeByte((byte) (0x01));
+            dest.writeList(workexperiences);
+        }
+        if (projects == null) {
+            dest.writeByte((byte) (0x00));
+        } else {
+            dest.writeByte((byte) (0x01));
+            dest.writeList(projects);
+        }
+        dest.writeValue(skills);
+        dest.writeValue(links);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<Profile> CREATOR = new Parcelable.Creator<Profile>() {
+        @Override
+        public Profile createFromParcel(Parcel in) {
+            return new Profile(in);
+        }
+
+        @Override
+        public Profile[] newArray(int size) {
+            return new Profile[size];
+        }
+    };
 }
