@@ -19,11 +19,11 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (!calledAlready)
-        {
-            FirebaseDatabase.getInstance().setPersistenceEnabled(true);
-            calledAlready = true;
-        }
+//        if (!calledAlready)
+//        {
+//            FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+//            calledAlready = true;
+//        }
 
         database = FirebaseDatabase.getInstance();
 

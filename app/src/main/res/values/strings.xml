@@ -17,13 +17,13 @@
     <string name="text_full_portfolio">Full Portfolio</string>
     <string name="text_make_app">Make your own Résumé app</string>
     <string name="text_education_1"><![CDATA[%1$s %2$s a]]></string>
-    <string name="text_education_2"><![CDATA[<degree title> in <area of study>]]></string>
+    <string name="text_education_2"><![CDATA[%1$s in %2$s]]></string>
     <string name="text_from">from</string>
     <string name="text_university_placeholder">University of name name</string>
     <string name="text_and">and</string>
-    <string name="text_graduate_date">Graduated/graduating in month year</string>
-    <string name="text_major_1">Major: major 1</string>
-    <string name="text_minor_1">Minor: minor 1</string>
+    <string name="text_graduate_date">%1$s in %2$s</string>
+    <string name="text_major_1">Major: %1$s</string>
+    <string name="text_minor_1">Minor: %1$s</string>
     <string name="text_coursework">Coursework</string>
     <string name="text_skills_header">Firstname\'s top skills</string>
     <string name="text_skill_1">Skill 1</string>

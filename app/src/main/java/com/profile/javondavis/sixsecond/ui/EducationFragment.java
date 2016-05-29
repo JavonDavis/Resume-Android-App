@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,9 +19,7 @@ import com.profile.javondavis.models.Education;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -42,12 +40,15 @@ public class EducationFragment extends Fragment {
 
     private Education mEducation;
     private String mFirstName;
+    private String mStatus = "is pursuing"; // default status
+    private String gStatus = "is graduating"; // default graduation status
 
     @Bind(R.id.educationTextView1) TextView educationTextView1;
     @Bind(R.id.educationTextView2) TextView educationTextView2;
+    @Bind(R.id.universityNameView) TextView educationUniversityNameView;
     @Bind(R.id.dateView) TextView educationDateView;
-    @Bind(R.id.major1View) TextView educationMajor1;
-    @Bind(R.id.minor1View) TextView educationMinor1;
+    @Bind(R.id.major1View) TextView educationMajor1View;
+    @Bind(R.id.minor1View) TextView educationMinor1View;
     @Bind(R.id.courseContainer) LinearLayout educationCourseContainer;
     @Bind(R.id.courseList) RecyclerView educationCourseList;
 
@@ -88,16 +89,58 @@ public class EducationFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_education, container, false);
         ButterKnife.bind(this,view);
 
-        String status = getDateText();
-
         Resources res = getResources();
-        String textForEducationView1 = String.format(res.getString(R.string.text_education_1), mFirstName,status);
 
+        // Fill in text for "<Firstname> <received/is pursuing> a" TextView
+        processStatus(); // sets mStatus to either received or is pursuing and gStatus to either
+                         //graduating or graduated
+
+        String textForEducationView1 = String.format(res.getString(R.string.text_education_1), mFirstName,mStatus);
         educationTextView1.setText(textForEducationView1);
+
+        // Fill in text for "<degree title> in <area of study>" TextView
+        String degreeTitle = mEducation.getDegree();
+        String areaOfStudy = mEducation.getStudy();
+
+        String textForEducationView2 = String.format(res.getString(R.string.text_education_2), degreeTitle,areaOfStudy);
+        educationTextView2.setText(textForEducationView2);
+
+        // Fill in University name
+        educationUniversityNameView.setText(mEducation.getName());
+
+        // Fill in graduation
+        String textForEducationGraduationView = String.format(res.getString(R.string.text_graduate_date), gStatus, mEducation.getEnd());
+
+        educationDateView.setText(textForEducationGraduationView);
+
+        //Fill in major and minor
+        String textForMajorView = String.format(res.getString(R.string.text_major_1), mEducation.getMajor());
+        String textForMinorView = String.format(res.getString(R.string.text_minor_1), mEducation.getMinor());
+
+        educationMajor1View.setText(textForMajorView);
+        educationMinor1View.setText(textForMinorView);
+
+        // Fill in courses if any available
+
+        if(mEducation.getCourses().isEmpty())
+        {
+            educationCourseContainer.setVisibility(View.GONE);
+        }
+        else
+        {
+            educationCourseList.setHasFixedSize(true);
+
+            LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
+            educationCourseList.setLayoutManager(mLayoutManager);
+
+            CourseAdapter courseAdapter = new CourseAdapter(mEducation.getCourses());
+            educationCourseList.setAdapter(courseAdapter);
+        }
+
         return view;
     }
 
-    public String getDateText()
+    public void processStatus()
     {
         SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.DATE_FORMAT, Constants.LOCALE);
 
@@ -114,17 +157,18 @@ public class EducationFragment extends Fragment {
         {
             if(Constants.isDateAfterToday(endDate))
             {
-                return "is pursuing";
+                mStatus = "is pursuing";
+                gStatus = "is graduating";
             }
             else
             {
-                return "received";
+                mStatus = "received";
+                gStatus = "graduated";
             }
         }
         else
         {
             Log.d(LOG_TAG, "endate was null after parsing defaulting to is pursing");
-            return "is pursuing";
         }
     }
 
