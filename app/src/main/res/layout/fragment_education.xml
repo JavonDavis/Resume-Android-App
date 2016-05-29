@@ -65,19 +65,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/text_major_1"
-            android:id="@+id/major1"
+            android:id="@+id/major1View"
             android:padding="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/text_minor_1"
-            android:id="@+id/minor1"
+            android:id="@+id/minor1View"
             android:padding="10dp"/>
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/courseContainer"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -86,8 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/text_coursework"
-            android:layout_gravity="center"
-            android:id="@+id/courseWorkView" />
+            android:layout_gravity="center" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/courseList"

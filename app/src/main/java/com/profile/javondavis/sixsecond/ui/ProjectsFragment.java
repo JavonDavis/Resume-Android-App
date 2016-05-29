@@ -34,9 +34,10 @@ public class ProjectsFragment extends Fragment {
      * this fragment using the provided parameters.
      *
      * @return A new instance of fragment ProjectsFragment.
+     * @param firstname
      * @param projects
      */
-    public static ProjectsFragment newInstance(List<Project> projects) {
+    public static ProjectsFragment newInstance(String firstname, List<Project> projects) {
         ProjectsFragment fragment = new ProjectsFragment();
         Bundle args = new Bundle();
 

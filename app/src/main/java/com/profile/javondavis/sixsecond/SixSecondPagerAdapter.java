@@ -28,15 +28,15 @@ public class SixSecondPagerAdapter extends FragmentStatePagerAdapter {
         switch (position)
         {
             case Constants.PAGE_EDUCATION:
-                return EducationFragment.newInstance(profile.getEducations().get(0));
+                return EducationFragment.newInstance(profile.getFirstname(),profile.getEducations().get(0));
             case Constants.PAGE_SKILLS:
-                return TopSkillsFragment.newInstance(profile.getSkills());
+                return TopSkillsFragment.newInstance(profile.getFirstname(),profile.getSkills());
             case Constants.PAGE_ORGANIZATIONS:
-                return OrganizationsFragment.newInstance(profile.getWorkexperiences());
+                return OrganizationsFragment.newInstance(profile.getFirstname(),profile.getWorkexperiences());
             case Constants.PAGE_PROJECTS:
-                return ProjectsFragment.newInstance(profile.getProjects());
+                return ProjectsFragment.newInstance(profile.getFirstname(),profile.getProjects());
         }
-        return EducationFragment.newInstance(profile.getEducations().get(0));
+        return EducationFragment.newInstance(profile.getFirstname(), profile.getEducations().get(0));
     }
 
     @Override

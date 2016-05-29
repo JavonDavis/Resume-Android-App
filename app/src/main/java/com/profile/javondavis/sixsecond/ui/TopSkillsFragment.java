@@ -32,9 +32,10 @@ public class TopSkillsFragment extends Fragment {
      * this fragment using the provided parameters.
      *
      * @return A new instance of fragment TopSkillsFragment.
+     * @param firstname
      * @param skills
      */
-    public static TopSkillsFragment newInstance(Skills skills) {
+    public static TopSkillsFragment newInstance(String firstname, Skills skills) {
         TopSkillsFragment fragment = new TopSkillsFragment();
         Bundle args = new Bundle();
 
