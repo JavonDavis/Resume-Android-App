@@ -25,7 +25,7 @@
     <string name="text_major_1">Major: %1$s</string>
     <string name="text_minor_1">Minor: %1$s</string>
     <string name="text_coursework">Coursework</string>
-    <string name="text_skills_header">Firstname\'s top skills</string>
+    <string name="text_skills_header">%1$s\'s top skills</string>
     <string name="text_skill_1">Skill 1</string>
     <string name="text_skill_2">Skill 2</string>
     <string name="text_skill_3">Skill 3</string>
@@ -39,6 +39,6 @@
     <string name="relevant_technologies">Relevant Technologies</string>
     <string name="relevant_technology">Relevant Technology</string>
     <string name="text_placeholder_duty">In charge of a specific Duty at the Organization</string>
-    <string name="text_skills_header_2">Firstname is also familiar with</string>
+    <string name="text_skills_header_2">%1$s is also familiar with</string>
     <string name="text_skill_4">Skill 4</string>
 </resources>
