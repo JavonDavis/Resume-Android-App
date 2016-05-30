@@ -2,15 +2,20 @@ package com.profile.javondavis.sixsecond.ui;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.profile.javondavis.R;
+import com.profile.javondavis.helpers.Constants;
 import com.profile.javondavis.models.Project;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.ButterKnife;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +29,9 @@ public class ProjectsFragment extends Fragment {
 
 
     private OnFragmentInteractionListener mListener;
+
+    private String mFirstName;
+    private ArrayList<Project> mProjects;
 
     public ProjectsFragment() {
         // Required empty public constructor
@@ -41,7 +49,8 @@ public class ProjectsFragment extends Fragment {
         ProjectsFragment fragment = new ProjectsFragment();
         Bundle args = new Bundle();
 
-        //add any arguments here
+        args.putString(Constants.TAG_NAME, firstname);
+        args.putParcelableArrayList(Constants.TAG_PROJECTS, (ArrayList<? extends Parcelable>) projects);
         fragment.setArguments(args);
         return fragment;
     }
@@ -50,6 +59,9 @@ public class ProjectsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
+
+            mFirstName = getArguments().getString(Constants.TAG_NAME);
+            mProjects = getArguments().getParcelableArrayList(Constants.TAG_PROJECTS);
         }
     }
 
@@ -57,6 +69,9 @@ public class ProjectsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_projects, container, false);
+        ButterKnife.bind(this, view);
+
+
         return view;
     }
 

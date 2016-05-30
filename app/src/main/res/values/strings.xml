@@ -29,8 +29,8 @@
     <string name="text_skill_1">Skill 1</string>
     <string name="text_skill_2">Skill 2</string>
     <string name="text_skill_3">Skill 3</string>
-    <string name="text_organization_header">Firstname worked at</string>
-    <string name="text_organization_duration">From start to end</string>
+    <string name="text_organization_header">%1$s\'s Experience</string>
+    <string name="text_organization_duration">%1$s to %2$s</string>
     <string name="text_organization_title">Organization</string>
     <string name="text_project_header">Firstname worked on</string>
     <string name="text_project_title">Project Title</string>
@@ -41,4 +41,7 @@
     <string name="text_placeholder_duty">In charge of a specific Duty at the Organization</string>
     <string name="text_skills_header_2">%1$s is also familiar with</string>
     <string name="text_skill_4">Skill 4</string>
+    <string name="position">Position</string>
+    <string name="at">at</string>
+    <string name="text_current">Currently Works Here</string>
 </resources>

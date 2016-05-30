@@ -1,4 +1,4 @@
-package com.profile.javondavis.sixsecond.ui;
+package com.profile.javondavis.sixsecond.ui.education;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -142,16 +142,7 @@ public class EducationFragment extends Fragment {
 
     public void processStatus()
     {
-        SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.DATE_FORMAT, Constants.LOCALE);
-
-        String endDateString = mEducation.getEnd();
-        Date endDate = null;
-
-        try {
-            endDate = dateFormat.parse(endDateString);
-        } catch (ParseException e) {
-            Log.e(LOG_TAG, "Could not parse "+endDateString+". Current format is:"+Constants.DATE_FORMAT);
-        }
+        Date endDate = Constants.getDateFromString(LOG_TAG, mEducation.getEnd());
 
         if(endDate != null)
         {
@@ -168,7 +159,7 @@ public class EducationFragment extends Fragment {
         }
         else
         {
-            Log.d(LOG_TAG, "endate was null after parsing defaulting to is pursing");
+            Log.d(LOG_TAG, "endDate was null after parsing defaulting to 'is pursing'");
         }
     }
 

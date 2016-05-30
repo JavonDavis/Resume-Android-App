@@ -1,5 +1,9 @@
 package com.profile.javondavis.helpers;
 
+import android.util.Log;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -43,5 +47,18 @@ public final class Constants {
         Date today = c.getTime();
 
         return date.after(today);
+    }
+
+
+    public static Date getDateFromString(String tag, String dateString)
+    {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.DATE_FORMAT, Constants.LOCALE);
+
+        try {
+            return dateFormat.parse(dateString);
+        } catch (ParseException e) {
+            Log.e(tag, "Could not parse "+dateString+". Current format is:"+Constants.DATE_FORMAT);
+        }
+        return null;
     }
 }

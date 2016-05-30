@@ -9,97 +9,121 @@
     android:orientation="vertical"
     tools:context="com.profile.javondavis.sixsecond.ui.TopSkillsFragment">
 
-
-    <LinearLayout
-        android:orientation="vertical"
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_top_skills"
+        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        card_view:cardCornerRadius="4dp"
+        android:layout_marginBottom="5dp"
+        android:padding="10dp"
         android:layout_weight="3">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/text_skills_header"
-            android:textAllCaps="true"
-            android:layout_gravity="center"
-            android:id="@+id/topSkillsHeaderView"/>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/text_skill_1"
-            android:layout_margin="15dp"
-            android:id="@+id/topSkill1TextView"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/text_skills_header"
+                android:textAllCaps="true"
+                android:layout_gravity="center"
+                android:id="@+id/topSkillsHeaderView"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/text_skill_2"
-            android:layout_margin="15dp"
-            android:id="@+id/topSkill2TextView"
-            android:layout_gravity="center_horizontal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/text_skill_1"
+                android:layout_margin="15dp"
+                android:id="@+id/topSkill1TextView"
+                android:layout_gravity="center_horizontal" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/text_skill_3"
-            android:layout_margin="15dp"
-            android:id="@+id/topSkill3TextView"
-            android:layout_gravity="center_horizontal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/text_skill_2"
+                android:layout_margin="15dp"
+                android:id="@+id/topSkill2TextView"
+                android:layout_gravity="center_horizontal" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/text_skill_4"
-            android:layout_margin="15dp"
-            android:id="@+id/topSkill4TextView"
-            android:layout_gravity="center_horizontal" />
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/text_skill_3"
+                android:layout_margin="15dp"
+                android:id="@+id/topSkill3TextView"
+                android:layout_gravity="center_horizontal" />
 
-    <LinearLayout
-        android:orientation="vertical"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/text_skill_4"
+                android:layout_margin="15dp"
+                android:id="@+id/topSkill4TextView"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_familiar_skills"
+        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        card_view:cardCornerRadius="4dp"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
         android:layout_weight="2">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/text_skills_header_2"
-            android:layout_gravity="center"
-            android:id="@+id/topSkillsHeaderView2"/>
+            android:layout_gravity="center">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/text_skill_1"
-            android:layout_margin="15dp"
-            android:id="@+id/familiarSkill1TextView"
-            android:layout_gravity="center_horizontal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/text_skills_header_2"
+                android:layout_gravity="center"
+                android:id="@+id/topSkillsHeaderView2"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/text_skill_2"
-            android:layout_margin="15dp"
-            android:id="@+id/familiarSkill2TextView"
-            android:layout_gravity="center_horizontal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/text_skill_1"
+                android:layout_margin="15dp"
+                android:id="@+id/familiarSkill1TextView"
+                android:layout_gravity="center_horizontal" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/text_skill_3"
-            android:layout_margin="15dp"
-            android:id="@+id/familiarSkill3TextView"
-            android:layout_gravity="center_horizontal" />
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/text_skill_2"
+                android:layout_margin="15dp"
+                android:id="@+id/familiarSkill2TextView"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/text_skill_3"
+                android:layout_margin="15dp"
+                android:id="@+id/familiarSkill3TextView"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
 </LinearLayout>

@@ -10,4 +10,5 @@
     <dimen name="top_skills_header_margin">80dp</dimen>
     <dimen name="skill_1_margin">60dp</dimen>
     <dimen name="skill_margin">45dp</dimen>
+    <dimen name="text_size_duty">12sp</dimen>
 </resources>
