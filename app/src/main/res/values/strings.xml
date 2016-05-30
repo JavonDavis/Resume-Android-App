@@ -32,9 +32,9 @@
     <string name="text_organization_header">%1$s\'s Experience</string>
     <string name="text_organization_duration">%1$s to %2$s</string>
     <string name="text_organization_title">Organization</string>
-    <string name="text_project_header">Firstname worked on</string>
+    <string name="text_project_header">%1$s\'s Projects</string>
     <string name="text_project_title">Project Title</string>
-    <string name="text_project_date">in month year</string>
+    <string name="text_project_date">Month Year</string>
     <string name="text_description_placeholder">Project description</string>
     <string name="relevant_technologies">Relevant Technologies</string>
     <string name="relevant_technology">Relevant Technology</string>

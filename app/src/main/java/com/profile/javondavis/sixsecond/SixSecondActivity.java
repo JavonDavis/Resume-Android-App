@@ -9,7 +9,7 @@ import com.profile.javondavis.helpers.Constants;
 import com.profile.javondavis.models.Profile;
 import com.profile.javondavis.sixsecond.ui.education.EducationFragment;
 import com.profile.javondavis.sixsecond.ui.organization.OrganizationsFragment;
-import com.profile.javondavis.sixsecond.ui.ProjectsFragment;
+import com.profile.javondavis.sixsecond.ui.projects.ProjectsFragment;
 import com.profile.javondavis.sixsecond.ui.TopSkillsFragment;
 
 import butterknife.Bind;

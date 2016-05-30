@@ -1,12 +1,16 @@
-package com.profile.javondavis.sixsecond.ui;
+package com.profile.javondavis.sixsecond.ui.projects;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.profile.javondavis.R;
 import com.profile.javondavis.helpers.Constants;
@@ -15,6 +19,7 @@ import com.profile.javondavis.models.Project;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
@@ -33,6 +38,9 @@ public class ProjectsFragment extends Fragment {
     private String mFirstName;
     private ArrayList<Project> mProjects;
 
+    @Bind(R.id.projectList) RecyclerView projectList;
+    @Bind(R.id.projectHeaderView) TextView projectsHeaderView;
+
     public ProjectsFragment() {
         // Required empty public constructor
     }
@@ -42,8 +50,8 @@ public class ProjectsFragment extends Fragment {
      * this fragment using the provided parameters.
      *
      * @return A new instance of fragment ProjectsFragment.
-     * @param firstname
-     * @param projects
+     * @param firstname - String
+     * @param projects - List of Project objects
      */
     public static ProjectsFragment newInstance(String firstname, List<Project> projects) {
         ProjectsFragment fragment = new ProjectsFragment();
@@ -71,6 +79,18 @@ public class ProjectsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_projects, container, false);
         ButterKnife.bind(this, view);
 
+        Resources res = getResources();
+        String textForProjectsHeader = String.format(res.getString(R.string.text_project_header), mFirstName);
+
+        projectsHeaderView.setText(textForProjectsHeader);
+
+        projectList.setHasFixedSize(true);
+
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
+        projectList.setLayoutManager(mLayoutManager);
+
+        ProjectAdapter organizationAdapter = new ProjectAdapter(getContext(), mProjects);
+        projectList.setAdapter(organizationAdapter);
 
         return view;
     }

@@ -3,6 +3,9 @@ package com.profile.javondavis.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Javon Davis
  *         Created by Javon Davis on 28/05/16.
@@ -14,6 +17,7 @@ public class Project implements Parcelable {
     public String source;
     public String title;
     public String url;
+    private ArrayList<String> tags;
 
     public Project()
     {
@@ -60,12 +64,27 @@ public class Project implements Parcelable {
         this.url = url;
     }
 
+    public ArrayList<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(ArrayList<String> tags) {
+        this.tags = tags;
+    }
+
+
     protected Project(Parcel in) {
         date = in.readString();
         description = in.readString();
         source = in.readString();
         title = in.readString();
         url = in.readString();
+        if (in.readByte() == 0x01) {
+            tags = new ArrayList<>();
+            in.readList(tags, String.class.getClassLoader());
+        } else {
+            tags = null;
+        }
     }
 
     @Override
@@ -80,6 +99,12 @@ public class Project implements Parcelable {
         dest.writeString(source);
         dest.writeString(title);
         dest.writeString(url);
+        if (tags == null) {
+            dest.writeByte((byte) (0x00));
+        } else {
+            dest.writeByte((byte) (0x01));
+            dest.writeList(tags);
+        }
     }
 
     @SuppressWarnings("unused")

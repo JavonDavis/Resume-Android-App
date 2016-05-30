@@ -1,12 +1,15 @@
 package com.profile.javondavis.helpers;
 
 import android.util.Log;
+import android.view.View;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+
+import butterknife.ButterKnife;
 
 /**
  * @author Javon Davis
@@ -61,4 +64,10 @@ public final class Constants {
         }
         return null;
     }
+
+    public static final ButterKnife.Action<View> VISIBILITY_GONE = new ButterKnife.Action<View>() {
+        @Override public void apply(View view, int index) {
+            view.setVisibility(View.GONE);
+        }
+    };
 }

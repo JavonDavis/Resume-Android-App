@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.profile.javondavis.R;
+import com.profile.javondavis.helpers.Constants;
 import com.profile.javondavis.models.WorkExperience;
 
 import java.util.ArrayList;
@@ -78,19 +79,19 @@ public class OrganizationAdapter extends RecyclerView.Adapter<OrganizationAdapte
         switch (responsibilities.size())
         {
             case 0:
-                ButterKnife.apply(holder.dutyViews,VISIBILITY_GONE);
+                ButterKnife.apply(holder.dutyViews, Constants.VISIBILITY_GONE);
                 break;
             case 1:
                 holder.organizationDuty1View.setText(responsibilities.get(0));
                 dutyViews.remove(0);
-                ButterKnife.apply(dutyViews,VISIBILITY_GONE);
+                ButterKnife.apply(dutyViews,Constants.VISIBILITY_GONE);
                 break;
             case 2:
                 holder.organizationDuty1View.setText(responsibilities.get(0));
                 dutyViews.remove(0);
                 holder.organizationDuty2View.setText(responsibilities.get(1));
                 dutyViews.remove(0);
-                ButterKnife.apply(dutyViews,VISIBILITY_GONE);
+                ButterKnife.apply(dutyViews,Constants.VISIBILITY_GONE);
                 break;
             case 3:
                 holder.organizationDuty1View.setText(responsibilities.get(0));
@@ -127,10 +128,4 @@ public class OrganizationAdapter extends RecyclerView.Adapter<OrganizationAdapte
             ButterKnife.bind(this, itemView);
         }
     }
-
-    static final ButterKnife.Action<View> VISIBILITY_GONE = new ButterKnife.Action<View>() {
-        @Override public void apply(View view, int index) {
-            view.setVisibility(View.GONE);
-        }
-    };
 }

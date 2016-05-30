@@ -1,2 +1,2 @@
 # Resume-Android-App
-Android application for my Resume
+Android application for a Resume
