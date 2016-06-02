@@ -10,7 +10,7 @@ import java.util.List;
  * @author Javon Davis
  *         Created by Javon Davis on 28/05/16.
  */
-public class Education implements Parcelable {
+public class Education implements Parcelable, Model {
 
     public ArrayList<String> courses;
 

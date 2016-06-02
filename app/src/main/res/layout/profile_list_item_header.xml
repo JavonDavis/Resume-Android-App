@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top|center"
+    android:id="@+id/constraintLayout">
+
+    <ImageView
+        android:src="@drawable/default_picture"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/content_description_profile_picture"
+        android:id="@+id/profile_picture" />
+
+    <TextView
+        android:text="@string/placeholder_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:id="@+id/nameTextView"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </LinearLayout>

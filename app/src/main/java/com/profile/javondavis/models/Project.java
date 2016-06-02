@@ -10,7 +10,7 @@ import java.util.List;
  * @author Javon Davis
  *         Created by Javon Davis on 28/05/16.
  */
-public class Project implements Parcelable {
+public class Project implements Parcelable, Model {
 
     public String date;
     public String description;

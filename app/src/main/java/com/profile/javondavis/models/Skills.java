@@ -11,7 +11,7 @@ import java.util.List;
  * @author Javon Davis
  *         Created by Javon Davis on 28/05/16.
  */
-public class Skills implements Parcelable {
+public class Skills implements Parcelable, Model {
 
     public List<String> familiar;
     public List<String> proficient;

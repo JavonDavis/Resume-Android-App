@@ -70,4 +70,5 @@ public final class Constants {
             view.setVisibility(View.GONE);
         }
     };
+
 }

@@ -7,7 +7,7 @@ import android.os.Parcelable;
  * @author Javon Davis
  *         Created by Javon Davis on 28/05/16.
  */
-public class Link implements Parcelable {
+public class Link implements Parcelable, Model {
 
     public String description;
     public String link;

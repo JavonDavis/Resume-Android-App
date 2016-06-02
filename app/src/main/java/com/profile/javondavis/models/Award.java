@@ -7,7 +7,7 @@ import android.os.Parcelable;
  * @author Javon Davis
  *         Created by Javon Davis on 28/05/16.
  */
-public class Award implements Parcelable {
+public class Award implements Parcelable, Model {
     public String date;
     public String issuer;
     public String title;

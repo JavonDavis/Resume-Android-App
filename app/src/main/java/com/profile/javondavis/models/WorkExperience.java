@@ -10,7 +10,7 @@ import java.util.List;
  * @author Javon Davis
  *         Created by Javon Davis on 28/05/16.
  */
-public class WorkExperience implements Parcelable {
+public class WorkExperience implements Parcelable, Model {
 
     public String employer;
     public String start;

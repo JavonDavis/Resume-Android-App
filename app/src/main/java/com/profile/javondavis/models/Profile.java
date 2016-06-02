@@ -10,7 +10,7 @@ import java.util.List;
  * @author Javon Davis
  *         Created by Javon Davis on 28/05/16.
  */
-public class Profile implements Parcelable {
+public class Profile implements Parcelable, Model {
 
     public String name;
     public String firstname;
