@@ -51,4 +51,8 @@
     <string name="content_description_twitter">Twitter</string>
     <string name="content_description_facebook">Facebook</string>
     <string name="content_description_email">Email</string>
+    <string name="text_proficient">Proficient</string>
+    <string name="text_familiar">Familiar</string>
+    <string name="text_proficient_skill">Proficient Skill</string>
+    <string name="text_familiar_skill">Familiar Skill</string>
 </resources>

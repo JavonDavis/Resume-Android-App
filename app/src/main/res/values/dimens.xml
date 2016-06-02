@@ -11,4 +11,5 @@
     <dimen name="skill_1_margin">60dp</dimen>
     <dimen name="skill_margin">45dp</dimen>
     <dimen name="text_size_duty">12sp</dimen>
+    <dimen name="text_size_skill">14sp</dimen>
 </resources>
