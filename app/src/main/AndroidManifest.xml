@@ -19,7 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FullPortfolioActivity"></activity>
+        <activity
+            android:name=".fullportfolio.FullPortfolioActivity"
+            android:label="@string/title_activity_full_portfolio"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
