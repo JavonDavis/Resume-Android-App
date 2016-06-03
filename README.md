@@ -1,2 +1,2 @@
 # Resume-Android-App
-Android application for a Resume
+Platform for building a Résumé in Android
