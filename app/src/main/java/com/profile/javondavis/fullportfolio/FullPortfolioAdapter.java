@@ -79,35 +79,35 @@ public class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.View
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if(holder instanceof HeaderViewHolder)
         {
-
+            HeaderViewHolder viewHolder = (HeaderViewHolder) holder;
         }
         else if (holder instanceof SectionHeaderViewHolder)
         {
-
+            SectionHeaderViewHolder viewHolder = (SectionHeaderViewHolder) holder;
         }
         else if (holder instanceof SkillViewHolder)
         {
-
+            SkillViewHolder viewHolder = (SkillViewHolder) holder;
         }
         else if (holder instanceof EducationViewHolder)
         {
-
-        }
-        else if(holder instanceof CertificationViewHolder)
-        {
-
-        }
-        else if(holder instanceof AwardViewHolder)
-        {
-
+            EducationViewHolder viewHolder = (EducationViewHolder) holder;
         }
         else if(holder instanceof ProjectViewHolder)
         {
-
+            ProjectViewHolder viewHolder = (ProjectViewHolder) holder;
         }
         else if(holder instanceof ExperienceViewHolder)
         {
-
+            ExperienceViewHolder viewHolder = (ExperienceViewHolder) holder;
+        }
+        else if(holder instanceof CertificationViewHolder)
+        {
+            Log.e(LOG_TAG, "ViewHolder for Certification not implemented as yet");
+        }
+        else if(holder instanceof AwardViewHolder)
+        {
+            Log.e(LOG_TAG, "ViewHolder for Award not implemented as yet");
         }
         else
         {

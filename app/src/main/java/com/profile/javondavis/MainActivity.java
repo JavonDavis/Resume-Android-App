@@ -78,6 +78,7 @@ public class MainActivity extends BaseActivity {
 
     public void onFullPortfolioButtonClick(View view) {
         Intent intent = new Intent(this, FullPortfolioActivity.class);
+        intent.putExtra(Constants.TAG_PROFILE, profile);
         startActivity(intent);
     }
 

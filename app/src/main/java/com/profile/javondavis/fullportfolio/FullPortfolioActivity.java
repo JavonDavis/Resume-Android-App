@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.profile.javondavis.R;
+import com.profile.javondavis.helpers.Constants;
+import com.profile.javondavis.models.Profile;
 
 public class FullPortfolioActivity extends AppCompatActivity {
 
@@ -18,14 +20,22 @@ public class FullPortfolioActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Profile profile = getIntent().getParcelableExtra(Constants.TAG_PROFILE);
+
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.container,FullPortfolioFragment.newInstance(profile))
+                .commit();
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        if (fab != null) {
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+            });
+        }
     }
 
 }
