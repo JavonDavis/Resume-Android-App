@@ -15,7 +15,13 @@ import com.profile.javondavis.fullportfolio.viewholders.HeaderViewHolder;
 import com.profile.javondavis.fullportfolio.viewholders.ProjectViewHolder;
 import com.profile.javondavis.fullportfolio.viewholders.SectionHeaderViewHolder;
 import com.profile.javondavis.fullportfolio.viewholders.SkillViewHolder;
+import com.profile.javondavis.helpers.HeaderListItem;
 import com.profile.javondavis.helpers.ListItem;
+import com.profile.javondavis.helpers.SectionHeaderListItem;
+import com.profile.javondavis.models.Education;
+import com.profile.javondavis.models.Project;
+import com.profile.javondavis.models.Skills;
+import com.profile.javondavis.models.WorkExperience;
 
 import java.util.ArrayList;
 
@@ -80,26 +86,32 @@ public class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.View
         if(holder instanceof HeaderViewHolder)
         {
             HeaderViewHolder viewHolder = (HeaderViewHolder) holder;
+            HeaderListItem item = (HeaderListItem) mItems.get(position);
         }
         else if (holder instanceof SectionHeaderViewHolder)
         {
             SectionHeaderViewHolder viewHolder = (SectionHeaderViewHolder) holder;
+            SectionHeaderListItem item = (SectionHeaderListItem) mItems.get(position);
         }
         else if (holder instanceof SkillViewHolder)
         {
             SkillViewHolder viewHolder = (SkillViewHolder) holder;
+            Skills skills = (Skills) mItems.get(position).getModel();
         }
         else if (holder instanceof EducationViewHolder)
         {
             EducationViewHolder viewHolder = (EducationViewHolder) holder;
+            Education education = (Education) mItems.get(position).getModel();
         }
         else if(holder instanceof ProjectViewHolder)
         {
             ProjectViewHolder viewHolder = (ProjectViewHolder) holder;
+            Project project = (Project) mItems.get(position).getModel();
         }
         else if(holder instanceof ExperienceViewHolder)
         {
             ExperienceViewHolder viewHolder = (ExperienceViewHolder) holder;
+            WorkExperience experience = (WorkExperience) mItems.get(position).getModel();
         }
         else if(holder instanceof CertificationViewHolder)
         {
