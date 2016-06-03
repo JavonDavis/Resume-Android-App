@@ -25,8 +25,7 @@ public class EducationViewHolder extends RecyclerView.ViewHolder
     @Bind(R.id.dateView) TextView educationDateView;
     @Bind(R.id.major1View) TextView educationMajor1View;
     @Bind(R.id.minor1View) TextView educationMinor1View;
-    @Bind(R.id.courseContainer)
-    LinearLayout educationCourseContainer;
+    @Bind(R.id.courseContainer) LinearLayout educationCourseContainer;
     @Bind(R.id.courseTable) TableLayout educationCourseList;
 
     public EducationViewHolder(View itemView) {

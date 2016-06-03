@@ -65,7 +65,7 @@ public class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.View
                 return new EducationViewHolder(v);
             case ListItem.VIEW_TYPE_PROJECT:
                 v = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.profile_list_item_projects, parent, false);
+                        .inflate(R.layout.profile_list_item_project, parent, false);
                 return new ProjectViewHolder(v);
             case ListItem.VIEW_TYPE_EXPERIENCE:
                 v = LayoutInflater.from(parent.getContext())
