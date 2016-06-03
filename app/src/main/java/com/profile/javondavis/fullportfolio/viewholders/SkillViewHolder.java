@@ -2,6 +2,12 @@ package com.profile.javondavis.fullportfolio.viewholders;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.TableLayout;
+
+import com.profile.javondavis.R;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 /**
  * @author Javon Davis
@@ -11,7 +17,10 @@ import android.view.View;
 public class SkillViewHolder extends RecyclerView.ViewHolder
 {
 
+    @Bind(R.id.skillsTable) TableLayout skillsTable;
+
     public SkillViewHolder(View itemView) {
         super(itemView);
+        ButterKnife.bind(this, itemView);
     }
 }
