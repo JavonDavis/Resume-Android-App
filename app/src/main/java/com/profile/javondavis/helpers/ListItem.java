@@ -20,8 +20,6 @@ public abstract class ListItem {
     public static final int VIEW_TYPE_HEADER = 6;
     public static final int VIEW_TYPE_SECTION_HEADER = 7;
 
-    public static final int ITEM_COUNT = 6;
-
     public abstract int getViewType();
     public abstract Model getModel();
 }

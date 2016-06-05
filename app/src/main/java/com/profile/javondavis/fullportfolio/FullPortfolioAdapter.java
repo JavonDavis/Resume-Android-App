@@ -126,7 +126,6 @@ class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             SkillViewHolder viewHolder = (SkillViewHolder) holder;
             Skills skills = (Skills) mItems.get(position).getModel();
 
-            LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View row;
 
             int i = 0;
@@ -135,11 +134,13 @@ class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             int proficientSize = skills.getProficient().size();
             int familiarSize = skills.getFamiliar().size();
 
-            boolean skillAvailable = false;
+            boolean skillAvailable;
 
             do
             {
-                row = inflater.inflate(R.layout.skills_table_row,viewHolder.skillsTable,true);
+                skillAvailable = false;
+                row = LayoutInflater.from(mContext)
+                        .inflate(R.layout.skills_table_row,viewHolder.skillsTable,false);
                 TextView skillView;
 
                 if(i < proficientSize)
@@ -156,6 +157,11 @@ class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                     skillView.setText(skills.getFamiliar().get(j));
                     skillAvailable = true;
                     j++;
+                }
+
+                if(skillAvailable)
+                {
+                    viewHolder.skillsTable.addView(row);
                 }
             }while (skillAvailable);
         }
@@ -358,7 +364,7 @@ class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @Override
     public int getItemCount() {
-        return ListItem.ITEM_COUNT;
+        return mItems.size();
     }
 
     @Override
