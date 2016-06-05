@@ -150,7 +150,7 @@ public class FullPortfolioFragment extends Fragment {
             });
         }
 
-        FullPortfolioAdapter adapter = new FullPortfolioAdapter(items);
+        FullPortfolioAdapter adapter = new FullPortfolioAdapter(mProfile.getFirstname(),getContext(),items);
         profileList.setAdapter(adapter);
 
         return view;

@@ -39,13 +39,13 @@ public class Skills implements Parcelable, Model {
 
     protected Skills(Parcel in) {
         if (in.readByte() == 0x01) {
-            familiar = new ArrayList<String>();
+            familiar = new ArrayList<>();
             in.readList(familiar, String.class.getClassLoader());
         } else {
             familiar = null;
         }
         if (in.readByte() == 0x01) {
-            proficient = new ArrayList<String>();
+            proficient = new ArrayList<>();
             in.readList(proficient, String.class.getClassLoader());
         } else {
             proficient = null;

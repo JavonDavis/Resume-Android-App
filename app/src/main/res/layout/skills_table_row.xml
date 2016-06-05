@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <TextView
+        android:id="@+id/proficientView"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:text="@string/text_proficient_skill"
@@ -11,6 +12,7 @@
         android:padding="3dip"
         android:textSize="@dimen/text_size_skill"/>
     <TextView
+        android:id="@+id/familiarView"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:text="@string/text_familiar_skill"

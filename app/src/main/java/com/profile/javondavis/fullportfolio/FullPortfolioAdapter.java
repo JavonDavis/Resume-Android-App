@@ -1,11 +1,17 @@
 package com.profile.javondavis.fullportfolio;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TableLayout;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.profile.javondavis.R;
 import com.profile.javondavis.fullportfolio.viewholders.AwardViewHolder;
 import com.profile.javondavis.fullportfolio.viewholders.CertificationViewHolder;
@@ -15,6 +21,7 @@ import com.profile.javondavis.fullportfolio.viewholders.HeaderViewHolder;
 import com.profile.javondavis.fullportfolio.viewholders.ProjectViewHolder;
 import com.profile.javondavis.fullportfolio.viewholders.SectionHeaderViewHolder;
 import com.profile.javondavis.fullportfolio.viewholders.SkillViewHolder;
+import com.profile.javondavis.helpers.Constants;
 import com.profile.javondavis.helpers.HeaderListItem;
 import com.profile.javondavis.helpers.ListItem;
 import com.profile.javondavis.helpers.SectionHeaderListItem;
@@ -24,19 +31,31 @@ import com.profile.javondavis.models.Skills;
 import com.profile.javondavis.models.WorkExperience;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import butterknife.ButterKnife;
 
 /**
  * @author Javon Davis
  *         Created by Javon Davis on 02/06/2016.
  */
 
-public class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final String LOG_TAG = "FullPortfolioAdapter";
     private ArrayList<? extends ListItem> mItems;
+    private Context mContext;
 
-    public FullPortfolioAdapter(ArrayList<? extends ListItem> items) {
+    private String mStatus = "is pursuing"; // default status
+    private String gStatus = "is graduating"; // default graduation status
+
+    private String mFirstName;
+
+    FullPortfolioAdapter(String firstname, Context context, ArrayList<? extends ListItem> items) {
         this.mItems = items;
+        this.mContext = context;
+        this.mFirstName = firstname;
     }
 
     @Override
@@ -87,31 +106,218 @@ public class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.View
         {
             HeaderViewHolder viewHolder = (HeaderViewHolder) holder;
             HeaderListItem item = (HeaderListItem) mItems.get(position);
+
+            Glide
+                    .with(mContext)
+                    .load(item.getPictureUrl())
+                    .into(viewHolder.picture);
+
+            viewHolder.nameTextView.setText(item.getName());
         }
         else if (holder instanceof SectionHeaderViewHolder)
         {
             SectionHeaderViewHolder viewHolder = (SectionHeaderViewHolder) holder;
             SectionHeaderListItem item = (SectionHeaderListItem) mItems.get(position);
+
+            viewHolder.sectionHeaderView.setText(item.getTitle());
         }
         else if (holder instanceof SkillViewHolder)
         {
             SkillViewHolder viewHolder = (SkillViewHolder) holder;
             Skills skills = (Skills) mItems.get(position).getModel();
+
+            LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View row;
+
+            int i = 0;
+            int j = 0;
+
+            int proficientSize = skills.getProficient().size();
+            int familiarSize = skills.getFamiliar().size();
+
+            boolean skillAvailable = false;
+
+            do
+            {
+                row = inflater.inflate(R.layout.skills_table_row,viewHolder.skillsTable,true);
+                TextView skillView;
+
+                if(i < proficientSize)
+                {
+                    skillView = (TextView) row.findViewById(R.id.proficientView);
+                    skillView.setText(skills.getProficient().get(i));
+                    skillAvailable = true;
+                    i++;
+                }
+
+                if(j < familiarSize)
+                {
+                    skillView = (TextView) row.findViewById(R.id.familiarView);
+                    skillView.setText(skills.getFamiliar().get(j));
+                    skillAvailable = true;
+                    j++;
+                }
+            }while (skillAvailable);
         }
         else if (holder instanceof EducationViewHolder)
         {
             EducationViewHolder viewHolder = (EducationViewHolder) holder;
-            Education education = (Education) mItems.get(position).getModel();
+            Education mEducation = (Education) mItems.get(position).getModel();
+
+            Resources res = mContext.getResources();
+
+            // Fill in text for "<Firstname> <received/is pursuing> a" TextView
+            processStatus(mEducation); // sets mStatus to either received or is pursuing and gStatus to either
+            //graduating or graduated
+
+            String textForEducationView1 = String.format(res.getString(R.string.text_education_1), mFirstName,mStatus);
+            viewHolder.educationTextView1.setText(textForEducationView1);
+
+            // Fill in text for "<degree title> in <area of study>" TextView
+            String degreeTitle = mEducation.getDegree();
+            String areaOfStudy = mEducation.getStudy();
+
+            String textForEducationView2 = String.format(res.getString(R.string.text_education_2), degreeTitle,areaOfStudy);
+            viewHolder.educationTextView2.setText(textForEducationView2);
+
+            // Fill in University name
+            viewHolder.educationUniversityNameView.setText(mEducation.getName());
+
+            // Fill in graduation
+            String textForEducationGraduationView = String.format(res.getString(R.string.text_graduate_date), gStatus, mEducation.getEnd());
+
+            viewHolder.educationDateView.setText(textForEducationGraduationView);
+
+            //Fill in major and minor
+            String textForMajorView = String.format(res.getString(R.string.text_major_1), mEducation.getMajor());
+            String textForMinorView = String.format(res.getString(R.string.text_minor_1), mEducation.getMinor());
+
+            viewHolder.educationMajor1View.setText(textForMajorView);
+            viewHolder.educationMinor1View.setText(textForMinorView);
+
+            LinearLayout courseContainer = viewHolder.educationCourseContainer;
+            TableLayout courseTable = viewHolder.educationCourseList;
+
+            if(mEducation.getCourses().isEmpty())
+            {
+                courseContainer.setVisibility(View.GONE);
+            }
+            else
+            {
+                for (String course:mEducation.getCourses())
+                {
+                    TextView courseView = new TextView(mContext);
+                    courseView.setText(course);
+                    courseTable.addView(courseView);
+                }
+            }
         }
         else if(holder instanceof ProjectViewHolder)
         {
             ProjectViewHolder viewHolder = (ProjectViewHolder) holder;
             Project project = (Project) mItems.get(position).getModel();
+
+            viewHolder.projectTitleView.setText(project.getTitle());
+            viewHolder.projectDateView.setText(project.getDate());
+            viewHolder.projectDescriptionView.setText(project.getDescription());
+
+            ArrayList<String> relevantTechnologies = project.getTags();
+
+            // holder.relevantTechnologyViews is immutable since it is populated using ButterKnife
+            // technologyViews is a mutable copy
+            ArrayList<TextView> technologyViews = new ArrayList<>();
+            technologyViews.addAll(viewHolder.relevantTechnologyViews);
+
+            // check how many relevant technologies and set them accordingly
+            switch (relevantTechnologies.size())
+            {
+                case 0:
+                    ButterKnife.apply(viewHolder.relevantTechnologyViews, Constants.VISIBILITY_GONE);
+                    break;
+                case 1:
+                    viewHolder.relevantTechnologyView1.setText(relevantTechnologies.get(0));
+                    technologyViews.remove(0);
+                    ButterKnife.apply(technologyViews,Constants.VISIBILITY_GONE);
+                    break;
+                case 2:
+                    viewHolder.relevantTechnologyView1.setText(relevantTechnologies.get(0));
+                    technologyViews.remove(0);
+                    viewHolder.relevantTechnologyView2.setText(relevantTechnologies.get(1));
+                    technologyViews.remove(0);
+                    ButterKnife.apply(technologyViews,Constants.VISIBILITY_GONE);
+                    break;
+                case 3:
+                    viewHolder.relevantTechnologyView1.setText(relevantTechnologies.get(0));
+                    technologyViews.remove(0);
+                    viewHolder.relevantTechnologyView2.setText(relevantTechnologies.get(1));
+                    technologyViews.remove(0);
+                    viewHolder.relevantTechnologyView3.setText(relevantTechnologies.get(2));
+                    technologyViews.remove(0);
+                    break;
+            }
         }
         else if(holder instanceof ExperienceViewHolder)
         {
             ExperienceViewHolder viewHolder = (ExperienceViewHolder) holder;
-            WorkExperience experience = (WorkExperience) mItems.get(position).getModel();
+            WorkExperience workExperience = (WorkExperience) mItems.get(position).getModel();
+
+            // show position
+            viewHolder.organizationPositionView.setText(workExperience.getPosition());
+
+            // show name of organization
+            viewHolder.organizationNameView.setText(workExperience.getEmployer());
+
+            String end = workExperience.getEnd();
+            String start = workExperience.getStart();
+
+            if(!end.equals("present"))
+            {
+                viewHolder.currentView.setVisibility(View.GONE);
+
+                Resources res = mContext.getResources();
+                String textForDurationView = String.format(res.getString(R.string.text_organization_duration), start, end);
+
+                viewHolder.organizationDurationView.setText(textForDurationView);
+            }
+            else
+            {
+                viewHolder.organizationDurationView.setText(start);
+            }
+
+            List<String> responsibilities = workExperience.getResponsibilities();
+
+            // holder.dutyViews is immutable since it is populated using ButterKnife
+            // dutyViews is a mutable copy
+            ArrayList<TextView> dutyViews = new ArrayList<>();
+            dutyViews.addAll(viewHolder.dutyViews);
+
+            // check how many responsibilities and set them accordingly
+            switch (responsibilities.size())
+            {
+                case 0:
+                    ButterKnife.apply(viewHolder.dutyViews, Constants.VISIBILITY_GONE);
+                    break;
+                case 1:
+                    viewHolder.organizationDuty1View.setText(responsibilities.get(0));
+                    dutyViews.remove(0);
+                    ButterKnife.apply(dutyViews,Constants.VISIBILITY_GONE);
+                    break;
+                case 2:
+                    viewHolder.organizationDuty1View.setText(responsibilities.get(0));
+                    dutyViews.remove(0);
+                    viewHolder.organizationDuty2View.setText(responsibilities.get(1));
+                    dutyViews.remove(0);
+                    ButterKnife.apply(dutyViews,Constants.VISIBILITY_GONE);
+                    break;
+                case 3:
+                    viewHolder.organizationDuty1View.setText(responsibilities.get(0));
+                    dutyViews.remove(0);
+                    viewHolder.organizationDuty2View.setText(responsibilities.get(1));
+                    dutyViews.remove(0);
+                    viewHolder.organizationDuty3View.setText(responsibilities.get(2));
+                    dutyViews.remove(0);
+                    break;
+            }
         }
         else if(holder instanceof CertificationViewHolder)
         {
@@ -124,6 +330,29 @@ public class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.View
         else
         {
             Log.e(LOG_TAG, "No Valid ViewHolder found for item");
+        }
+    }
+
+    private void processStatus(Education mEducation)
+    {
+        Date endDate = Constants.getDateFromString(LOG_TAG, mEducation.getEnd());
+
+        if(endDate != null)
+        {
+            if(Constants.isDateAfterToday(endDate))
+            {
+                mStatus = "is pursuing";
+                gStatus = "is graduating";
+            }
+            else
+            {
+                mStatus = "received";
+                gStatus = "graduated";
+            }
+        }
+        else
+        {
+            Log.d(LOG_TAG, "endDate was null after parsing defaulting to 'is pursing'");
         }
     }
 

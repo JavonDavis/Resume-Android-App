@@ -19,14 +19,14 @@ import butterknife.ButterKnife;
 public class EducationViewHolder extends RecyclerView.ViewHolder
 {
 
-    @Bind(R.id.educationTextView1) TextView educationTextView1;
-    @Bind(R.id.educationTextView2) TextView educationTextView2;
-    @Bind(R.id.universityNameView) TextView educationUniversityNameView;
-    @Bind(R.id.dateView) TextView educationDateView;
-    @Bind(R.id.major1View) TextView educationMajor1View;
-    @Bind(R.id.minor1View) TextView educationMinor1View;
-    @Bind(R.id.courseContainer) LinearLayout educationCourseContainer;
-    @Bind(R.id.courseTable) TableLayout educationCourseList;
+    @Bind(R.id.educationTextView1) public TextView educationTextView1;
+    @Bind(R.id.educationTextView2) public TextView educationTextView2;
+    @Bind(R.id.universityNameView) public TextView educationUniversityNameView;
+    @Bind(R.id.dateView) public TextView educationDateView;
+    @Bind(R.id.major1View) public TextView educationMajor1View;
+    @Bind(R.id.minor1View) public TextView educationMinor1View;
+    @Bind(R.id.courseContainer) public LinearLayout educationCourseContainer;
+    @Bind(R.id.courseTable) public TableLayout educationCourseList;
 
     public EducationViewHolder(View itemView) {
         super(itemView);

@@ -2,6 +2,11 @@ package com.profile.javondavis.fullportfolio.viewholders;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.TextView;
+
+import com.profile.javondavis.R;
+
+import butterknife.Bind;
 
 /**
  * @author Javon Davis
@@ -11,6 +16,7 @@ import android.view.View;
 public class SectionHeaderViewHolder extends RecyclerView.ViewHolder
 {
 
+    @Bind(R.id.sectionHeader) public TextView sectionHeaderView;
     public SectionHeaderViewHolder(View itemView) {
         super(itemView);
     }

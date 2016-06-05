@@ -140,7 +140,7 @@ public class EducationFragment extends Fragment {
         return view;
     }
 
-    public void processStatus()
+    private void processStatus()
     {
         Date endDate = Constants.getDateFromString(LOG_TAG, mEducation.getEnd());
 

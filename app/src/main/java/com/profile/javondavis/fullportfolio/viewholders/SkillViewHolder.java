@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 public class SkillViewHolder extends RecyclerView.ViewHolder
 {
 
-    @Bind(R.id.skillsTable) TableLayout skillsTable;
+    @Bind(R.id.skillsTable) public TableLayout skillsTable;
 
     public SkillViewHolder(View itemView) {
         super(itemView);

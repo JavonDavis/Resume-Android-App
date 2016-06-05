@@ -1,6 +1,5 @@
 package com.profile.javondavis.fullportfolio.viewholders;
 
-import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,8 +17,8 @@ import butterknife.ButterKnife;
 
 public class HeaderViewHolder extends RecyclerView.ViewHolder
 {
-    @Bind(R.id.profile_picture) ImageView picture;
-    @Bind(R.id.nameTextView) TextView nameTextView;
+    @Bind(R.id.profile_picture) public ImageView picture;
+    @Bind(R.id.nameTextView) public TextView nameTextView;
 
     public HeaderViewHolder(View itemView) {
         super(itemView);
