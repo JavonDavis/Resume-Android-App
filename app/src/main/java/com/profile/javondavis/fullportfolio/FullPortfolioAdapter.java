@@ -52,6 +52,9 @@ class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     private String mFirstName;
 
+    int proficientIndex = 0;
+    int familiarIndex = 0;
+
     FullPortfolioAdapter(String firstname, Context context, ArrayList<? extends ListItem> items) {
         this.mItems = items;
         this.mContext = context;
@@ -128,9 +131,6 @@ class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
             View row;
 
-            int i = 0;
-            int j = 0;
-
             int proficientSize = skills.getProficient().size();
             int familiarSize = skills.getFamiliar().size();
 
@@ -143,20 +143,20 @@ class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                         .inflate(R.layout.skills_table_row,viewHolder.skillsTable,false);
                 TextView skillView;
 
-                if(i < proficientSize)
+                if(proficientIndex < proficientSize)
                 {
                     skillView = (TextView) row.findViewById(R.id.proficientView);
-                    skillView.setText(skills.getProficient().get(i));
+                    skillView.setText(skills.getProficient().get(proficientIndex));
                     skillAvailable = true;
-                    i++;
+                    proficientIndex++;
                 }
 
-                if(j < familiarSize)
+                if(familiarIndex < familiarSize)
                 {
                     skillView = (TextView) row.findViewById(R.id.familiarView);
-                    skillView.setText(skills.getFamiliar().get(j));
+                    skillView.setText(skills.getFamiliar().get(familiarIndex));
                     skillAvailable = true;
-                    j++;
+                    familiarIndex++;
                 }
 
                 if(skillAvailable)
