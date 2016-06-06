@@ -89,7 +89,16 @@ public class ProjectsFragment extends Fragment {
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         projectList.setLayoutManager(mLayoutManager);
 
-        ProjectAdapter organizationAdapter = new ProjectAdapter(getContext(), mProjects);
+        int numProjects = mProjects.size();
+        int end = numProjects > 3 ? 3:numProjects;
+
+        ArrayList<Project> filteredProjects = new ArrayList<>(); // result of ArrayList.subList could not be cast to ArrayList
+        for(int index = 0; index<end; index++)
+        {
+            filteredProjects.add(mProjects.get(index));
+        }
+
+        ProjectAdapter organizationAdapter = new ProjectAdapter(getContext(), filteredProjects);
         projectList.setAdapter(organizationAdapter);
 
         return view;

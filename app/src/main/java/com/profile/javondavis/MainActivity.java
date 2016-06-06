@@ -1,6 +1,7 @@
 package com.profile.javondavis;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -78,6 +79,10 @@ public class MainActivity extends BaseActivity {
     }
 
     public void onMakeYourOwnClick(View view) {
+        String url = "https://github.com/JA-VON/Resume-Android-App";
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+        startActivity(i);
     }
 
     public void onPictureClick(View view) {

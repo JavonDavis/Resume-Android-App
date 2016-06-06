@@ -24,6 +24,10 @@ public final class Constants {
     public static final int PAGE_ORGANIZATIONS = 2;
     public static final int PAGE_PROJECTS = 3;
 
+    public static final int NUM_SIX_SECOND_PAGES = 3; // Should always be one less than actual number
+    public static final int NUM_SECONDS = 2000;
+
+
     public static final String TAG_PROFILE = "Profile";
     public static final String TAG_EDUCATION = "Education";
     public static final String TAG_SKILLS = "Skills";

@@ -29,10 +29,10 @@
     <string name="text_skill_1">Skill 1</string>
     <string name="text_skill_2">Skill 2</string>
     <string name="text_skill_3">Skill 3</string>
-    <string name="text_organization_header">%1$s\'s Experience</string>
+    <string name="text_organization_header">%1$s\'s Top Experiences</string>
     <string name="text_organization_duration">%1$s to %2$s</string>
     <string name="text_organization_title">Organization</string>
-    <string name="text_project_header">%1$s\'s Projects</string>
+    <string name="text_project_header">%1$s\'s Top Projects</string>
     <string name="text_project_title">Project Title</string>
     <string name="text_project_date">Month Year</string>
     <string name="text_description_placeholder">Project description</string>

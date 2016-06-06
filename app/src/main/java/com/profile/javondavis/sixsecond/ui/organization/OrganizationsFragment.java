@@ -88,7 +88,16 @@ public class OrganizationsFragment extends Fragment {
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         organizationList.setLayoutManager(mLayoutManager);
 
-        OrganizationAdapter organizationAdapter = new OrganizationAdapter(getContext(), mWorkExperiences);
+        int numExperiences = mWorkExperiences.size();
+        int end = numExperiences > 3 ? 3:numExperiences;
+
+        ArrayList<WorkExperience> filteredWorkExperiences = new ArrayList<>(); // result of ArrayList.subList could not be cast to ArrayList
+        for(int index = 0; index<end; index++)
+        {
+            filteredWorkExperiences.add(mWorkExperiences.get(index));
+        }
+
+        OrganizationAdapter organizationAdapter = new OrganizationAdapter(getContext(), filteredWorkExperiences);
         organizationList.setAdapter(organizationAdapter);
         return view;
     }
