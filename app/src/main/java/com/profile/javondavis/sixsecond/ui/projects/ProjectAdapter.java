@@ -51,39 +51,29 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
 
         ArrayList<String> relevantTechnologies = project.getTags();
 
-        // holder.relevantTechnologyViews is immutable since it is populated using ButterKnife
-        // technologyViews is a mutable copy
-        ArrayList<TextView> technologyViews = new ArrayList<>();
-        technologyViews.addAll(holder.relevantTechnologyViews);
-
         // check how many relevant technologies and set them accordingly
-        switch (relevantTechnologies.size())
+        //limited to 3 for now
+        int numTechnologies = relevantTechnologies.size();
+        numTechnologies = numTechnologies >3 ? 3: numTechnologies;
+
+        switch (numTechnologies)
         {
-            case 0:
-                ButterKnife.apply(holder.relevantTechnologyViews, Constants.VISIBILITY_VISIBLE);
-                break;
             case 1:
                 holder.relevantTechnologyView1.setText(relevantTechnologies.get(0));
-                technologyViews.remove(0);
-                ButterKnife.apply(technologyViews,Constants.VISIBILITY_VISIBLE);
                 break;
             case 2:
                 holder.relevantTechnologyView1.setText(relevantTechnologies.get(0));
-                technologyViews.remove(0);
                 holder.relevantTechnologyView2.setText(relevantTechnologies.get(1));
-                technologyViews.remove(0);
-                ButterKnife.apply(technologyViews,Constants.VISIBILITY_VISIBLE);
                 break;
             case 3:
                 holder.relevantTechnologyView1.setText(relevantTechnologies.get(0));
-                technologyViews.remove(0);
                 holder.relevantTechnologyView2.setText(relevantTechnologies.get(1));
-                technologyViews.remove(0);
                 holder.relevantTechnologyView3.setText(relevantTechnologies.get(2));
-                technologyViews.remove(0);
                 break;
         }
-        
+
+        if(numTechnologies > 0)
+            ButterKnife.apply(holder.relevantTechnologyViews.subList(0,numTechnologies),Constants.VISIBILITY_VISIBLE);
     }
 
     @Override

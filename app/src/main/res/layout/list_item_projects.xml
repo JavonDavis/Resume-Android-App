@@ -51,8 +51,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/relevant_technology"
             android:id="@+id/relevantTechnologyView1"
+            android:visibility="gone"
             android:padding="5dp"
             android:layout_gravity="center_horizontal" />
 
@@ -60,8 +60,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/relevant_technology"
             android:id="@+id/relevantTechnologyView2"
+            android:visibility="gone"
             android:padding="5dp"
             android:layout_gravity="center_horizontal" />
 
@@ -69,8 +69,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/relevant_technology"
             android:id="@+id/relevantTechnologyView3"
+            android:visibility="gone"
             android:padding="5dp"
             android:layout_gravity="center_horizontal" />
 

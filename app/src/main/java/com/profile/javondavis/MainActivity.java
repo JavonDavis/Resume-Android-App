@@ -39,11 +39,6 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        if(getSupportActionBar() != null)
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
-
         DatabaseReference mRef = super.database.getReference("profile");
 
         mRef.addListenerForSingleValueEvent(new ValueEventListener() {
