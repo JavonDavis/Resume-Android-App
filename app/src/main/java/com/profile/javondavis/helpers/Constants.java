@@ -65,9 +65,9 @@ public final class Constants {
         return null;
     }
 
-    public static final ButterKnife.Action<View> VISIBILITY_GONE = new ButterKnife.Action<View>() {
+    public static final ButterKnife.Action<View> VISIBILITY_VISIBLE = new ButterKnife.Action<View>() {
         @Override public void apply(View view, int index) {
-            view.setVisibility(View.GONE);
+            view.setVisibility(View.VISIBLE);
         }
     };
 

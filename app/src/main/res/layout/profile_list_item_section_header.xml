@@ -2,6 +2,9 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:text="@string/text_skill_1"
     android:id="@+id/sectionHeader"
+    android:gravity="center"
+    android:textSize="36sp"
+    android:layout_margin="10dp"
     android:textAppearance="?android:attr/textAppearanceLarge"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"/>

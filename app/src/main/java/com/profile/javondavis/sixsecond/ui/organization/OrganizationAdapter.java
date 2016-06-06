@@ -79,19 +79,19 @@ public class OrganizationAdapter extends RecyclerView.Adapter<OrganizationAdapte
         switch (responsibilities.size())
         {
             case 0:
-                ButterKnife.apply(holder.dutyViews, Constants.VISIBILITY_GONE);
+                ButterKnife.apply(holder.dutyViews, Constants.VISIBILITY_VISIBLE);
                 break;
             case 1:
                 holder.organizationDuty1View.setText(responsibilities.get(0));
                 dutyViews.remove(0);
-                ButterKnife.apply(dutyViews,Constants.VISIBILITY_GONE);
+                ButterKnife.apply(dutyViews,Constants.VISIBILITY_VISIBLE);
                 break;
             case 2:
                 holder.organizationDuty1View.setText(responsibilities.get(0));
                 dutyViews.remove(0);
                 holder.organizationDuty2View.setText(responsibilities.get(1));
                 dutyViews.remove(0);
-                ButterKnife.apply(dutyViews,Constants.VISIBILITY_GONE);
+                ButterKnife.apply(dutyViews,Constants.VISIBILITY_VISIBLE);
                 break;
             case 3:
                 holder.organizationDuty1View.setText(responsibilities.get(0));

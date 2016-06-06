@@ -52,6 +52,8 @@ class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     private String mFirstName;
 
+    private boolean addCourseViews = true;
+
     int proficientIndex = 0;
     int familiarIndex = 0;
 
@@ -208,7 +210,7 @@ class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             {
                 courseContainer.setVisibility(View.GONE);
             }
-            else
+            else if(addCourseViews)
             {
                 for (String course:mEducation.getCourses())
                 {
@@ -216,6 +218,7 @@ class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                     courseView.setText(course);
                     courseTable.addView(courseView);
                 }
+                addCourseViews = false;
             }
         }
         else if(holder instanceof ProjectViewHolder)
@@ -229,38 +232,30 @@ class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
             ArrayList<String> relevantTechnologies = project.getTags();
 
-            // holder.relevantTechnologyViews is immutable since it is populated using ButterKnife
-            // technologyViews is a mutable copy
-            ArrayList<TextView> technologyViews = new ArrayList<>();
-            technologyViews.addAll(viewHolder.relevantTechnologyViews);
-
             // check how many relevant technologies and set them accordingly
-            switch (relevantTechnologies.size())
+
+            //limited to 3 for now
+            int numTechnologies = relevantTechnologies.size();
+            numTechnologies = numTechnologies >3 ? 3: numTechnologies;
+
+            switch (numTechnologies)
             {
-                case 0:
-                    ButterKnife.apply(viewHolder.relevantTechnologyViews, Constants.VISIBILITY_GONE);
-                    break;
                 case 1:
                     viewHolder.relevantTechnologyView1.setText(relevantTechnologies.get(0));
-                    technologyViews.remove(0);
-                    ButterKnife.apply(technologyViews,Constants.VISIBILITY_GONE);
                     break;
                 case 2:
                     viewHolder.relevantTechnologyView1.setText(relevantTechnologies.get(0));
-                    technologyViews.remove(0);
                     viewHolder.relevantTechnologyView2.setText(relevantTechnologies.get(1));
-                    technologyViews.remove(0);
-                    ButterKnife.apply(technologyViews,Constants.VISIBILITY_GONE);
                     break;
                 case 3:
                     viewHolder.relevantTechnologyView1.setText(relevantTechnologies.get(0));
-                    technologyViews.remove(0);
                     viewHolder.relevantTechnologyView2.setText(relevantTechnologies.get(1));
-                    technologyViews.remove(0);
                     viewHolder.relevantTechnologyView3.setText(relevantTechnologies.get(2));
-                    technologyViews.remove(0);
                     break;
             }
+
+            if(numTechnologies > 0)
+                ButterKnife.apply(viewHolder.relevantTechnologyViews.subList(0,numTechnologies),Constants.VISIBILITY_VISIBLE);
         }
         else if(holder instanceof ExperienceViewHolder)
         {
@@ -301,19 +296,19 @@ class FullPortfolioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             switch (responsibilities.size())
             {
                 case 0:
-                    ButterKnife.apply(viewHolder.dutyViews, Constants.VISIBILITY_GONE);
+                    ButterKnife.apply(viewHolder.dutyViews, Constants.VISIBILITY_VISIBLE);
                     break;
                 case 1:
                     viewHolder.organizationDuty1View.setText(responsibilities.get(0));
                     dutyViews.remove(0);
-                    ButterKnife.apply(dutyViews,Constants.VISIBILITY_GONE);
+                    ButterKnife.apply(dutyViews,Constants.VISIBILITY_VISIBLE);
                     break;
                 case 2:
                     viewHolder.organizationDuty1View.setText(responsibilities.get(0));
                     dutyViews.remove(0);
                     viewHolder.organizationDuty2View.setText(responsibilities.get(1));
                     dutyViews.remove(0);
-                    ButterKnife.apply(dutyViews,Constants.VISIBILITY_GONE);
+                    ButterKnife.apply(dutyViews,Constants.VISIBILITY_VISIBLE);
                     break;
                 case 3:
                     viewHolder.organizationDuty1View.setText(responsibilities.get(0));

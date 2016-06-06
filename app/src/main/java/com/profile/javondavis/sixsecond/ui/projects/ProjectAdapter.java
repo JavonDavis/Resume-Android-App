@@ -60,19 +60,19 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
         switch (relevantTechnologies.size())
         {
             case 0:
-                ButterKnife.apply(holder.relevantTechnologyViews, Constants.VISIBILITY_GONE);
+                ButterKnife.apply(holder.relevantTechnologyViews, Constants.VISIBILITY_VISIBLE);
                 break;
             case 1:
                 holder.relevantTechnologyView1.setText(relevantTechnologies.get(0));
                 technologyViews.remove(0);
-                ButterKnife.apply(technologyViews,Constants.VISIBILITY_GONE);
+                ButterKnife.apply(technologyViews,Constants.VISIBILITY_VISIBLE);
                 break;
             case 2:
                 holder.relevantTechnologyView1.setText(relevantTechnologies.get(0));
                 technologyViews.remove(0);
                 holder.relevantTechnologyView2.setText(relevantTechnologies.get(1));
                 technologyViews.remove(0);
-                ButterKnife.apply(technologyViews,Constants.VISIBILITY_GONE);
+                ButterKnife.apply(technologyViews,Constants.VISIBILITY_VISIBLE);
                 break;
             case 3:
                 holder.relevantTechnologyView1.setText(relevantTechnologies.get(0));
