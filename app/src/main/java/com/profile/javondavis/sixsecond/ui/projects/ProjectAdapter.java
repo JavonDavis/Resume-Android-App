@@ -14,7 +14,8 @@ import com.profile.javondavis.models.Project;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 
 /**
@@ -83,13 +84,13 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
 
     public static class ViewHolder extends RecyclerView.ViewHolder
     {
-        @Bind(R.id.projectTitleView) TextView projectTitleView;
-        @Bind(R.id.projectDateView) TextView projectDateView;
-        @Bind(R.id.projectDescriptionView) TextView projectDescriptionView;
-        @Bind(R.id.relevantTechnologyView1) TextView relevantTechnologyView1;
-        @Bind(R.id.relevantTechnologyView2) TextView relevantTechnologyView2;
-        @Bind(R.id.relevantTechnologyView3) TextView relevantTechnologyView3;
-        @Bind({R.id.relevantTechnologyView1, R.id.relevantTechnologyView2, R.id.relevantTechnologyView3})
+        @BindView(R.id.projectTitleView) TextView projectTitleView;
+        @BindView(R.id.projectDateView) TextView projectDateView;
+        @BindView(R.id.projectDescriptionView) TextView projectDescriptionView;
+        @BindView(R.id.relevantTechnologyView1) TextView relevantTechnologyView1;
+        @BindView(R.id.relevantTechnologyView2) TextView relevantTechnologyView2;
+        @BindView(R.id.relevantTechnologyView3) TextView relevantTechnologyView3;
+        @BindViews({R.id.relevantTechnologyView1, R.id.relevantTechnologyView2, R.id.relevantTechnologyView3})
         List<TextView> relevantTechnologyViews;
 
         public ViewHolder(View itemView) {

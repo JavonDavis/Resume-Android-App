@@ -6,7 +6,7 @@ import android.widget.TableLayout;
 
 import com.profile.javondavis.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 public class SkillViewHolder extends RecyclerView.ViewHolder
 {
 
-    @Bind(R.id.skillsTable) public TableLayout skillsTable;
+    @BindView(R.id.skillsTable) public TableLayout skillsTable;
 
     public SkillViewHolder(View itemView) {
         super(itemView);

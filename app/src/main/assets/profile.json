@@ -1,0 +1,148 @@
+{
+  "awards" : [ {
+    "date" : "March 2015",
+    "description" : "For excellent performance in 2013/2014 academic year",
+    "issuer" : "Dean of the faculty of Science amp; Technology at the University of the West Indies, Mona",
+    "title" : "Dean's List Award Recipient"
+  } ],
+  "educations" : [ {
+    "courses" : [ "Theory of Computation" ],
+    "degree" : "B.Sc.",
+    "end" : "October 2016",
+    "major" : "Computer Science",
+    "minor" : "Mathematics",
+    "name" : "University of the West Indies",
+    "start" : "September 2013",
+    "study" : "Computer Science"
+  } ],
+  "firstname" : "Javon",
+  "imageurl" : "https://firebasestorage.googleapis.com/v0/b/javon-davis.appspot.com/o/profile_pic.jpg?alt=media&token=b4e907ff-a66e-4040-988f-3dbdd165a5d5",
+  "links" : {
+    "emails" : [ "javonldavis14@gmail.com" ],
+    "github" : "https://github.com/JA-VON/",
+    "linkedin" : "https://linkedin.com/javonldavis"
+  },
+  "location" : "Kingston, Jamaica",
+  "name" : "Javon Davis",
+  "projects" : [ {
+    "date" : "May 2016",
+    "description" : "Python framework to generate a volume of questions based on a configuration, available on PyPi",
+    "source" : "https://github.com/JA-VON/QGenPY",
+    "tags" : [ "Python", "Django", "AngularJS" ],
+    "title" : "QGenPY",
+    "url" : "http://104.236.42.106/"
+  }, {
+    "date" : "February 2016",
+    "description" : "Android Library to animate the transitions over a number of views in a list",
+    "source" : "https://github.com/JA-VON/Android-View-Controller",
+    "tags" : [ "Android", "Java" ],
+    "title" : "AndroidViewController",
+    "url" : "http://android-arsenal.com/details/1/3208"
+  }, {
+    "date" : "December 2015",
+    "description" : "Interpreter for a Language defined by professor for a Language Processors course",
+    "source" : "https://github.com/JA-VON/Henderson-Painter-Language-HPL",
+    "tags" : [ "Language Processors", "Compiler Theory", "Java", "JLex", "Cup" ],
+    "title" : "HPL Interpreter",
+    "url" : ""
+  }, {
+    "date" : "March 2015",
+    "description" : "Users are given a word or phrase in English and must select Patois equivalent from a grid of letters",
+    "source" : "https://github.com/JA-VON/Chatois",
+    "tags" : [ "Android", "Java" ],
+    "title" : "Chatois",
+    "url" : "https://play.google.com/store/apps/details?id=com.chatois.app"
+  }, {
+    "date" : "December 2015",
+    "description" : "Android App to scan students’ ID cards and save their grades to a Moodle instance",
+    "source" : "https://github.com/JA-VON/Lab-Assistant",
+    "tags" : [ "Android", "Javascript", "Parse" ],
+    "title" : "Lab Assistant",
+    "url" : ""
+  }, {
+    "date" : "February 2016",
+    "description" : "Companion app for annual 3 day event held at the university",
+    "source" : "https://github.com/JA-VON/UWI-Research-Days-Android",
+    "tags" : [ "Android", "Java", "Parse", "Javascript" ],
+    "title" : "UWI Research Days",
+    "url" : "https://play.google.com/store/apps/details?id=com.uwics.uwidiscover&hl=en"
+  }, {
+    "date" : "August 2015",
+    "description" : "Android application for the eduction platform used by over 15000 students at the University of the West Indies, Mona Campus",
+    "source" : "https://github.com/JA-VON/Mobile-OurVLE",
+    "tags" : [ "Android", "Java" ],
+    "title" : "Mobile OurVLE",
+    "url" : ""
+  }, {
+    "date" : "August 2015",
+    "description" : "Android application for internal use to provide wine information, loaded from a MSSQL database, readily to the sales representatives of J Wray & Nephew in Jamaica.",
+    "source" : "",
+    "tags" : [ "Android", "Java", "MSSQL", "PHP" ],
+    "title" : "J Wray & Nephew Wine app",
+    "url" : ""
+  }, {
+    "date" : "December 2014",
+    "description" : "Application that won the Jamaica leg of the Agrihack talent Initiative in October 2014. Web/SMS application for farmers to gather valuable information about their crops or cattle using a text based system built by incorporating Nexmo API. Farmers would be able to text in codes and receive information accordingly.",
+    "source" : "https://github.com/JA-VON/HarvestSMS",
+    "tags" : [ "SMS", "Javascript", "Nexmo", "PHP" ],
+    "title" : "HarvestSMS",
+    "url" : ""
+  } ],
+  "skills" : {
+    "familiar" : [ "C/C++ programming", "Scala Programming", "IOS Development", "Swift Programming", "PHP Programming", "Play! Framework", "Laravel Framework", "Django Framework", "AngularJS" ],
+    "proficient" : [ "Android Development", "Java Programming", "Python Programming", "API Development", "JLex", "CUP" ]
+  },
+  "summary" : "Android Developer with 2 years of professional experience developing android applications for local companies in Jamaica. I have done 3 years of freelance Android application development for clients and 1 year of freelance Calculus tutoring along with voluntary Mathematics tutoring in my community. I possess a strong interest in competitive programming and a passion for building efficient and beautiful Android apps. Looking to leverage my knowledge and experience into a role as an Android Developer.",
+  "surname" : "Davis",
+  "title" : "Software Developer, Android Lover. VP, UWI Mona Computing Society",
+  "workexperiences" : [ {
+    "employer" : "Mona School of Business and Management",
+    "end" : "April 2016",
+    "links" : [ {
+      "description" : "Web browser for Ontology",
+      "link" : "http://thesaurus.cdmk-caribbean.net/"
+    }, {
+      "description" : "Web application",
+      "link" : "http://cdmk-caribbean.net/"
+    }, {
+      "description" : "Visualization of Ontology",
+      "link" : "http://skos.cdmk-caribbean.net/"
+    }, {
+      "description" : "Technical document",
+      "link" : "https://docs.google.com/document/d/1NTyG6dUjKXnuVeWETstk7gHHez056bbfdIc_T6k_tTw/edit"
+    } ],
+    "location" : "Kingston, Jamaica",
+    "position" : "Software Developer Intern",
+    "responsibilities" : [ "Built an Ontology manager using Vocbench, served the Ontology over a SPARQL endpoint using Apache Jena Fuseki, and prepared a technical document on the process", "Developed 3 web applications on top of the SPARQL endpoint using Maui, SKOS Play! and Skosmos" ],
+    "start" : "January 2016"
+  }, {
+    "employer" : "Mona Institute of Technology Services",
+    "end" : "January 2016",
+    "links" : [ {
+      "description" : "",
+      "link" : "https://github.com/JA-VON/Mobile-OurVLE"
+    } ],
+    "location" : "Kingston, Jamaica",
+    "position" : "Software Developer Intern",
+    "responsibilities" : [ "Developed an Android application for an education platform used by over 15000 students at the University", "Monitored the performance of team members and documented performance feedback for an Android project" ],
+    "start" : "June 2014"
+  }, {
+    "employer" : "Mona Technology Park",
+    "end" : "September 2015",
+    "location" : "Kingston, Jamaica",
+    "position" : "Android Developer",
+    "responsibilities" : [ "Implemented Google Cloud Messaging in an existing application for employee use, resulting in improved network performance and the company paying less for data usage", "Worked with the Play! framework to build an API to communicate with an existing Android application" ],
+    "start" : "January 2015"
+  }, {
+    "employer" : "University of the West Indies, Mona Campus",
+    "end" : "April 2016",
+    "links" : [ {
+      "description" : "",
+      "link" : "https://github.com/JA-VON/UWI-Research-Days-Android"
+    } ],
+    "location" : "Kingston, Jamaica",
+    "position" : "Lab Assistant",
+    "responsibilities" : [ "Developed Android app to scan students’ ID cards with Google Play Services API and save their grades", "Lead a 3-member development team for an Android app for an annual 3-day event held at the University", "Provide valuable feedback on courses to Lecturer's based on interactions with students." ],
+    "start" : "September 2014"
+  } ]
+}

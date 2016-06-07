@@ -8,7 +8,8 @@ import com.profile.javondavis.R;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 
 /**
@@ -19,13 +20,13 @@ import butterknife.ButterKnife;
 public class ProjectViewHolder extends RecyclerView.ViewHolder
 {
 
-    @Bind(R.id.projectTitleView) public TextView projectTitleView;
-    @Bind(R.id.projectDateView) public TextView projectDateView;
-    @Bind(R.id.projectDescriptionView) public TextView projectDescriptionView;
-    @Bind(R.id.relevantTechnologyView1) public TextView relevantTechnologyView1;
-    @Bind(R.id.relevantTechnologyView2) public TextView relevantTechnologyView2;
-    @Bind(R.id.relevantTechnologyView3) public TextView relevantTechnologyView3;
-    @Bind({R.id.relevantTechnologyView1, R.id.relevantTechnologyView2, R.id.relevantTechnologyView3})
+    @BindView(R.id.projectTitleView) public TextView projectTitleView;
+    @BindView(R.id.projectDateView) public TextView projectDateView;
+    @BindView(R.id.projectDescriptionView) public TextView projectDescriptionView;
+    @BindView(R.id.relevantTechnologyView1) public TextView relevantTechnologyView1;
+    @BindView(R.id.relevantTechnologyView2) public TextView relevantTechnologyView2;
+    @BindView(R.id.relevantTechnologyView3) public TextView relevantTechnologyView3;
+    @BindViews({R.id.relevantTechnologyView1, R.id.relevantTechnologyView2, R.id.relevantTechnologyView3})
     public List<TextView> relevantTechnologyViews;
     public ProjectViewHolder(View itemView) {
         super(itemView);

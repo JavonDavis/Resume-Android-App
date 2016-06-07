@@ -11,8 +11,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".sixsecond.SixSecondActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.profile.javondavis.sixsecond.SixSecondActivity" />
+        <activity android:name="com.profile.javondavis.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,9 +20,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".fullportfolio.FullPortfolioActivity"
+            android:name="com.profile.javondavis.fullportfolio.FullPortfolioActivity"
             android:label="@string/title_activity_full_portfolio"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

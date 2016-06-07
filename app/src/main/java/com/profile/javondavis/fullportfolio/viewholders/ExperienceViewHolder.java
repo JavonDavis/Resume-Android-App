@@ -9,7 +9,8 @@ import com.profile.javondavis.R;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 
 /**
@@ -20,16 +21,16 @@ import butterknife.ButterKnife;
 public class ExperienceViewHolder extends RecyclerView.ViewHolder
 {
 
-    @Bind(R.id.organizationTitleView) public TextView organizationNameView;
-    @Bind(R.id.positionView) public TextView organizationPositionView;
-    @Bind(R.id.organizationDurationView) public TextView organizationDurationView;
-    @Bind(R.id.organizationDuty1) public TextView organizationDuty1View;
-    @Bind(R.id.organizationDuty2) public TextView organizationDuty2View;
-    @Bind(R.id.organizationDuty3) public TextView organizationDuty3View;
-    @Bind({R.id.organizationDuty1,R.id.organizationDuty2,R.id.organizationDuty3})
+    @BindView(R.id.organizationTitleView) public TextView organizationNameView;
+    @BindView(R.id.positionView) public TextView organizationPositionView;
+    @BindView(R.id.organizationDurationView) public TextView organizationDurationView;
+    @BindView(R.id.organizationDuty1) public TextView organizationDuty1View;
+    @BindView(R.id.organizationDuty2) public TextView organizationDuty2View;
+    @BindView(R.id.organizationDuty3) public TextView organizationDuty3View;
+    @BindViews({R.id.organizationDuty1,R.id.organizationDuty2,R.id.organizationDuty3})
     public List<TextView> dutyViews;
-    @Bind(R.id.currentlyView) public TextView currentView;
-    @Bind(R.id.linksButton) public Button linksButton;
+    @BindView(R.id.currentlyView) public TextView currentView;
+    @BindView(R.id.linksButton) public Button linksButton;
 
     public ExperienceViewHolder(View itemView) {
         super(itemView);

@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.profile.javondavis.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -17,8 +17,8 @@ import butterknife.ButterKnife;
 
 public class HeaderViewHolder extends RecyclerView.ViewHolder
 {
-    @Bind(R.id.profile_picture) public ImageView picture;
-    @Bind(R.id.nameTextView) public TextView nameTextView;
+    @BindView(R.id.profile_picture) public ImageView picture;
+    @BindView(R.id.nameTextView) public TextView nameTextView;
 
     public HeaderViewHolder(View itemView) {
         super(itemView);

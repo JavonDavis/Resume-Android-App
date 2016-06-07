@@ -12,7 +12,7 @@ import com.profile.javondavis.R;
 import com.profile.javondavis.helpers.Constants;
 import com.profile.javondavis.models.Skills;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -31,17 +31,17 @@ public class TopSkillsFragment extends Fragment {
     private String mFirstName;
     private Skills mSkills;
 
-    @Bind(R.id.topSkillsHeaderView) TextView headerView1;
-    @Bind(R.id.topSkillsHeaderView2) TextView headerView2;
+    @BindView(R.id.topSkillsHeaderView) TextView headerView1;
+    @BindView(R.id.topSkillsHeaderView2) TextView headerView2;
 
-    @Bind(R.id.topSkill1TextView) TextView topSkill1View;
-    @Bind(R.id.topSkill2TextView) TextView topSkill2View;
-    @Bind(R.id.topSkill3TextView) TextView topSkill3View;
-    @Bind(R.id.topSkill4TextView) TextView topSkill4View;
+    @BindView(R.id.topSkill1TextView) TextView topSkill1View;
+    @BindView(R.id.topSkill2TextView) TextView topSkill2View;
+    @BindView(R.id.topSkill3TextView) TextView topSkill3View;
+    @BindView(R.id.topSkill4TextView) TextView topSkill4View;
 
-    @Bind(R.id.familiarSkill1TextView) TextView familiarSkill1View;
-    @Bind(R.id.familiarSkill2TextView) TextView familiarSkill2View;
-    @Bind(R.id.familiarSkill3TextView) TextView familiarSkill3View;
+    @BindView(R.id.familiarSkill1TextView) TextView familiarSkill1View;
+    @BindView(R.id.familiarSkill2TextView) TextView familiarSkill2View;
+    @BindView(R.id.familiarSkill3TextView) TextView familiarSkill3View;
 
     public TopSkillsFragment() {
         // Required empty public constructor

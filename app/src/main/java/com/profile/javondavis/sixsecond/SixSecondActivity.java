@@ -4,20 +4,19 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.profile.javondavis.R;
 import com.profile.javondavis.helpers.Constants;
 import com.profile.javondavis.models.Profile;
+import com.profile.javondavis.sixsecond.ui.TopSkillsFragment;
 import com.profile.javondavis.sixsecond.ui.education.EducationFragment;
 import com.profile.javondavis.sixsecond.ui.organization.OrganizationsFragment;
 import com.profile.javondavis.sixsecond.ui.projects.ProjectsFragment;
-import com.profile.javondavis.sixsecond.ui.TopSkillsFragment;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SixSecondActivity extends AppCompatActivity implements EducationFragment.OnFragmentInteractionListener
@@ -27,7 +26,7 @@ public class SixSecondActivity extends AppCompatActivity implements EducationFra
     private static final String LOG_TAG = "SixSecondActivity";
 
     //pager widget
-    @Bind(R.id.pager) ViewPager mPager;
+    @BindView(R.id.pager) ViewPager mPager;
 
     //adapter to provide pages to widget
     private SixSecondPagerAdapter pagerAdapter;

@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.profile.javondavis.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 public class SectionHeaderViewHolder extends RecyclerView.ViewHolder
 {
 
-    @Bind(R.id.sectionHeader) public TextView sectionHeaderView;
+    @BindView(R.id.sectionHeader) public TextView sectionHeaderView;
 
     public SectionHeaderViewHolder(View itemView) {
         super(itemView);

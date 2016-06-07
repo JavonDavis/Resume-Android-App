@@ -22,7 +22,7 @@ import com.profile.javondavis.models.WorkExperience;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -30,7 +30,7 @@ import butterknife.ButterKnife;
  */
 public class FullPortfolioFragment extends Fragment {
 
-    @Bind(R.id.profileList) RecyclerView profileList;
+    @BindView(R.id.profileList) RecyclerView profileList;
 
     private Profile mProfile;
 

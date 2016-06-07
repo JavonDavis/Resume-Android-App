@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * @author Javon Davis
@@ -13,7 +12,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class BaseActivity extends AppCompatActivity {
 
     static boolean calledAlready = false;
-    protected FirebaseDatabase database;
+    //protected FirebaseDatabase database;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,7 +24,7 @@ public class BaseActivity extends AppCompatActivity {
 //            calledAlready = true;
 //        }
 
-        database = FirebaseDatabase.getInstance();
+      //  database = FirebaseDatabase.getInstance();
 
     }
 }

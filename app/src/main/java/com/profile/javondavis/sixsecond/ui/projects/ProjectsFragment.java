@@ -19,7 +19,7 @@ import com.profile.javondavis.models.Project;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -38,8 +38,8 @@ public class ProjectsFragment extends Fragment {
     private String mFirstName;
     private ArrayList<Project> mProjects;
 
-    @Bind(R.id.projectList) RecyclerView projectList;
-    @Bind(R.id.projectHeaderView) TextView projectsHeaderView;
+    @BindView(R.id.projectList) RecyclerView projectList;
+    @BindView(R.id.projectHeaderView) TextView projectsHeaderView;
 
     public ProjectsFragment() {
         // Required empty public constructor

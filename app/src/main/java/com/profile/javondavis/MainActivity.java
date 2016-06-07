@@ -3,35 +3,34 @@ package com.profile.javondavis;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
 import com.profile.javondavis.fullportfolio.FullPortfolioActivity;
 import com.profile.javondavis.helpers.BaseActivity;
 import com.profile.javondavis.helpers.Constants;
 import com.profile.javondavis.models.Profile;
 import com.profile.javondavis.sixsecond.SixSecondActivity;
 
-import butterknife.Bind;
+import java.io.IOException;
+import java.io.InputStream;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity {
 
     static final String LOG_TAG = "MainActivity";
 
-    @Bind(R.id.locationTextView) TextView locationView;
-    @Bind(R.id.picture) ImageView pictureImageView;
-    @Bind(R.id.nameTextView) TextView nameView;
-    @Bind(R.id.six_second_button) Button sixSecondButton;
-    @Bind(R.id.full_portfolio_button) Button fullPortfolioButton;
+    @BindView(R.id.locationTextView) TextView locationView;
+    @BindView(R.id.picture) ImageView pictureImageView;
+    @BindView(R.id.nameTextView) TextView nameView;
+    @BindView(R.id.six_second_button) Button sixSecondButton;
+    @BindView(R.id.full_portfolio_button) Button fullPortfolioButton;
     private Profile profile;
 
     @Override
@@ -40,30 +39,38 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        DatabaseReference mRef = super.database.getReference("profile");
+        String jsonProfile = loadProfile();
 
-        mRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                profile = dataSnapshot.getValue(Profile.class);
+        if(jsonProfile != null) {
+            profile = new Gson().fromJson(jsonProfile, Profile.class);
 
-                Glide
-                        .with(MainActivity.this)
-                        .load(profile.getImageurl())
-                        .into(pictureImageView);
+            Glide
+                    .with(MainActivity.this)
+                    .load(profile.getImageurl())
+                    .into(pictureImageView);
 
-                nameView.setText(profile.getName());
-                locationView.setText(profile.getLocation());
+            nameView.setText(profile.getName());
+            locationView.setText(profile.getLocation());
 
-                sixSecondButton.setEnabled(true);
-                fullPortfolioButton.setEnabled(true);
-            }
+            sixSecondButton.setEnabled(true);
+            fullPortfolioButton.setEnabled(true);
+        }
+    }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
+    private String loadProfile() {
+        String json;
+        try {
+            InputStream is = getAssets().open("profile.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
     }
 
     public void onSixSecondButtonClick(View view) {

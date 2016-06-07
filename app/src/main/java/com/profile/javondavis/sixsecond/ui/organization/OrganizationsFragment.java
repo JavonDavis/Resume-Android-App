@@ -19,7 +19,7 @@ import com.profile.javondavis.models.WorkExperience;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -38,8 +38,8 @@ public class OrganizationsFragment extends Fragment {
     private String mFirstName;
     private ArrayList<WorkExperience> mWorkExperiences;
 
-    @Bind(R.id.organizationHeader) TextView organizationHeader;
-    @Bind(R.id.organizationList) RecyclerView organizationList;
+    @BindView(R.id.organizationHeader) TextView organizationHeader;
+    @BindView(R.id.organizationList) RecyclerView organizationList;
 
     public OrganizationsFragment() {
         // Required empty public constructor

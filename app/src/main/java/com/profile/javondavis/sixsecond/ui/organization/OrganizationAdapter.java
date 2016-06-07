@@ -15,7 +15,8 @@ import com.profile.javondavis.models.WorkExperience;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 
 /**
@@ -113,15 +114,15 @@ public class OrganizationAdapter extends RecyclerView.Adapter<OrganizationAdapte
     public static class ViewHolder extends RecyclerView.ViewHolder
     {
 
-        @Bind(R.id.organizationTitleView) TextView organizationNameView;
-        @Bind(R.id.positionView) TextView organizationPositionView;
-        @Bind(R.id.organizationDurationView) TextView organizationDurationView;
-        @Bind(R.id.organizationDuty1) TextView organizationDuty1View;
-        @Bind(R.id.organizationDuty2) TextView organizationDuty2View;
-        @Bind(R.id.organizationDuty3) TextView organizationDuty3View;
-        @Bind({R.id.organizationDuty1,R.id.organizationDuty2,R.id.organizationDuty3})
+        @BindView(R.id.organizationTitleView) TextView organizationNameView;
+        @BindView(R.id.positionView) TextView organizationPositionView;
+        @BindView(R.id.organizationDurationView) TextView organizationDurationView;
+        @BindView(R.id.organizationDuty1) TextView organizationDuty1View;
+        @BindView(R.id.organizationDuty2) TextView organizationDuty2View;
+        @BindView(R.id.organizationDuty3) TextView organizationDuty3View;
+        @BindViews({R.id.organizationDuty1,R.id.organizationDuty2,R.id.organizationDuty3})
         List<TextView> dutyViews;
-        @Bind(R.id.currentlyView) TextView currentView;
+        @BindView(R.id.currentlyView) TextView currentView;
 
         public ViewHolder(View itemView) {
             super(itemView);

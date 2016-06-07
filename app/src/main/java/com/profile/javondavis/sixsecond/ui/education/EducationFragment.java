@@ -17,11 +17,9 @@ import com.profile.javondavis.R;
 import com.profile.javondavis.helpers.Constants;
 import com.profile.javondavis.models.Education;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -43,14 +41,14 @@ public class EducationFragment extends Fragment {
     private String mStatus = "is pursuing"; // default status
     private String gStatus = "is graduating"; // default graduation status
 
-    @Bind(R.id.educationTextView1) TextView educationTextView1;
-    @Bind(R.id.educationTextView2) TextView educationTextView2;
-    @Bind(R.id.universityNameView) TextView educationUniversityNameView;
-    @Bind(R.id.dateView) TextView educationDateView;
-    @Bind(R.id.major1View) TextView educationMajor1View;
-    @Bind(R.id.minor1View) TextView educationMinor1View;
-    @Bind(R.id.courseContainer) LinearLayout educationCourseContainer;
-    @Bind(R.id.courseList) RecyclerView educationCourseList;
+    @BindView(R.id.educationTextView1) TextView educationTextView1;
+    @BindView(R.id.educationTextView2) TextView educationTextView2;
+    @BindView(R.id.universityNameView) TextView educationUniversityNameView;
+    @BindView(R.id.dateView) TextView educationDateView;
+    @BindView(R.id.major1View) TextView educationMajor1View;
+    @BindView(R.id.minor1View) TextView educationMinor1View;
+    @BindView(R.id.courseContainer) LinearLayout educationCourseContainer;
+    @BindView(R.id.courseList) RecyclerView educationCourseList;
 
     public EducationFragment() {
         // Required empty public constructor
