@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
  */
-public class ExampleUnitTest {
+public class ProfileUnitTest {
 
     private String sampleProfile = "{\n" +
             "  \"awards\" : [ {\n" +
@@ -163,10 +163,6 @@ public class ExampleUnitTest {
             "    \"start\" : \"September 2014\"\n" +
             "  } ]\n" +
             "}\n";
-    @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
-    }
 
     @Test
     // Test to see if Profile is loaded correctly using Gson
